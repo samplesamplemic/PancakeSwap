@@ -1,0 +1,103 @@
+@import 'https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap'
+
+@mixin reset-list
+  margin: 0
+  padding: 0
+  list-style: none
+  box-sizing:border-box
+    img
+        width: 100%
+    
+$rem: 1rem
+$bradius16: $rem
+$bradius24: calc($rem*1.5)
+// Font Family    
+$font: font-family: 'Kanit', sans-serif
+
+// Fonts sizes
+$p: $rem
+$md: calc($rem*1.25)
+$lg: calc($rem*1.5)
+$xl: calc($rem*2.5)
+$xxl: calc($rem*4)
+
+// Fonts weights
+$weight400: 400
+$weight600: 600
+
+// Fonts line-height
+$p-height: 1.1
+$h-height: 1.5
+
+//Palette Primary
+$purple: #9a6aff
+$magnolia: #f4eeff
+$bluebell: #b8add2
+$turquoise: #1fc7d4
+$white: #fff
+$blue-violet: linear-gradient(#7645D9,#452A7A)
+
+// Palette Secondary
+$black: #27262c
+$rose: #ed4b9e
+$lightblack: #08060b
+$yellow-crayola: linear-gradient(#ffb237 0%,#ffcd51 51.17%,#ffe76a 100%)
+$grey: #353547
+
+// Backgrounds
+$bg-color1: linear-gradient(#21193a,#191326)
+$bg-color2: linear-gradient(#3b4155,#21193a)
+$bg-color3: linear-gradient(#0b4576,#091115)
+
+// Animations
+$animation-duration: 1.5s
+$animation-duration-bunny: 2.5s
+$delay: 1s
+
+// mixins
+@mixin flex-row
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: $rem
+
+@mixin floating ()
+    @keyframes floating
+        0%
+            transform: translate(0, 0)
+        100%
+            transform: translate(4px, 4px)
+
+    animation-name: floating
+    animation-duration: $animation-duration-bunny
+    animation-delay: $delay
+    animation-iteration-count: infinite
+    transition-timing-function: ease-in-out
+    animation-direction: alternate
+    animation-fill-mode: none
+    animation-play-state: running
+
+@mixin button
+    @include tonino
+    border: 0
+    line-height: 1
+    font-size: $rem
+    font-weight: $weight600
+    height: calc($rem*3)
+    padding: 0 calc($rem*1.5)
+    background-color: $turquoise
+    border-radius: $bradius16
+    cursor: pointer
+    &:hover
+        opacity: .65
+    &:active
+        opacity: .85
+        transform: translateY(1px)
+
+@mixin button-transparent
+    @include buttons
+    color: $turquoise
+    background-color: transparent
+    padding: 0
+body
+    @include reset-list
