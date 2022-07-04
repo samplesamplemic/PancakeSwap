@@ -30,7 +30,7 @@ $p-height: 1.1
 $h-height: 1.5
 
 //Palette Primary
-$purple: #9a6aff
+$purple: #9a6aff  //purple
 $magnolia: #f4eeff
 $bluebell: #b8add2
 $turquoise: #1fc7d4
@@ -43,11 +43,13 @@ $rose: #ed4b9e
 $lightblack: #08060b
 $yellow-crayola: linear-gradient(#ffb237 0%,#ffcd51 51.17%,#ffe76a 100%)
 $grey: #353547
+$btn-bg-clr-checked: #31d0aa
 
 // Backgrounds
 $bg-color1: linear-gradient(#21193a,#191326)
 $bg-color2: linear-gradient(#3b4155,#21193a)
 $bg-color3: linear-gradient(#0b4576,#091115)
+$bg-overlay: background-color: rgba(244, 238, 255, 0.6)
 
 // Animations
 $animation-duration: 1.5s
@@ -55,7 +57,7 @@ $animation-duration-bunny: 2.5s
 $delay: 1s
 
 // mixins
-@mixin flex-row
+@mixin flex
     display: flex
     justify-content: center
     align-items: center
@@ -77,8 +79,8 @@ $delay: 1s
     animation-fill-mode: none
     animation-play-state: running
 
-@mixin button
-    @include tonino
+@mixin btn
+    @include flex
     border: 0
     line-height: 1
     font-size: $rem
@@ -94,10 +96,60 @@ $delay: 1s
         opacity: .85
         transform: translateY(1px)
 
-@mixin button-transparent
-    @include buttons
+@mixin btn-transparent
+    @include btn
     color: $turquoise
     background-color: transparent
     padding: 0
 body
     @include reset-list
+
+@mixin component
+    max-height: 790px
+    overflow: hidden
+    background-color: $black
+    border-radius: calc($rem * 2)
+    box-shadow: 0px 5px 12px 0px rgba(0,0,0,0.3) 
+
+@mixin btn-switch
+    position: relative
+    display: inline-block
+    width: calc($rem * 3.5)
+    height: calc($rem * 2)
+
+    input[type="checkbox"]
+    opacity: 0
+    width: 0
+    height: 0
+        &:checked + span 
+        background-color: $btn-bg-clr-checked  
+        &:focus + span 
+        box-shadow: 0 0 1px #2196F3
+        &:checked + span:before
+        -webkit-transform: translateX(26px)
+        -ms-transform: translateX(26px)
+        transform: translateX(26px)
+    span
+        border-radius: 34px 
+        position: absolute
+        cursor: pointer
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background-color: #ccc
+        -webkit-transition: .4s
+        transition: .4s   
+        &:before
+            border-radius: 50%
+            position: absolute
+            content: ""
+            height: 26px
+            width: 26px
+            left: 4px
+            bottom: 4px
+            background-color: white
+        input:hover span:before, input:focus span:before 
+	        box-shadow: rgb(118 69 217) 0px 0px 0px 1px, rgb(118 69 217 / 60%) 0px 0px 0px 4px
+            
+   
