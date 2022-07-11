@@ -1,4 +1,4 @@
-@mixin btn
+.btn
     @include flex
     border: 0
     line-height: 1
@@ -15,13 +15,13 @@
         opacity: .85
         transform: translateY(1px)
 
-@mixin btn-transparent
+.btn-transparent
     @include btn
     color: $secondary-color
     background-color: transparent
     padding: 0
 
-@mixin btn-switch
+.btn-switch
     position: relative
     display: inline-block
     width: calc($rem * 3.5)

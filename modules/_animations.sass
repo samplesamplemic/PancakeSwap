@@ -1,9 +1,5 @@
 // Animations
-$animation-duration: 1.5s
-$animation-duration: 2.5s
-$delay: 1s
-
-@mixin floating ()
+@mixin floating ($animation-duration:1.5s,$delay:1s)
     @keyframes floating
         0%
             transform: translate(0, 0)
