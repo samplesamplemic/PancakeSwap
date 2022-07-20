@@ -1,0 +1,260 @@
+nav
+    background-color: $bg-nav-components
+    width: 100%
+    height: calc($rem*3.5)
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: $rem
+    padding: 0 $rem 0 $rem
+    color: $p-color
+    position: fixed
+    border-bottom: 1px solid $border-nav-components
+
+@mixin scroll-bar
+    ::-webkit-scrollbar
+       width: 8px 
+    ::-webkit-scrollbar-thumb
+       background: rgb(184, 173, 210)
+       border-radius: 8px
+    ::-webkit-scrollbar-track
+        box-shadow: rgb(55 47 71) 0px 0px 5px inset
+        border-radius: 10px
+
+body, a, button
+    font-family: $font
+    @include scroll-bar 
+
+@mixin language
+    
+        position: relative
+        &:hover > div
+            opacity: 1
+            max-height: 400px
+            overflow-y: auto
+            transition: max-height 0s ease 0s, opacity 0.3s ease-in-out 0s
+            display: flex
+        div
+            position: absolute
+            display: none
+            align-items: center
+            opacity: 0
+            flex-direction: column
+            z-index: 1
+            background-color: $bg-nav-components
+            padding: 16px
+            border-radius: 4px
+            max-height: 0px
+            width: max-content
+            transform: translate(-50%, 0px)
+            left: 50%
+            top: 100%
+            transition: max-height 0s ease 0.3s, opacity 0.3s ease-in-out 0s
+            a
+                color: rgb(244, 238, 255)
+                font-weight: $weight600
+                line-height: 1.5
+                min-height: 32px
+                padding: 0 8px
+                letter-spacing: 0.03rem
+                 
+                &:hover
+                 text-decoration: none
+                 opacity: 0.65
+
+@mixin icon-hover
+    
+    &:hover
+        transition-property: background-color, opacity
+        transition-duration: 0.2s, 0.2s
+        transition-timing-function: ease, ease
+        transition-delay: 0s, 0s
+
+.warning
+    @include flex
+    width: 100%
+    height: 100%
+    gap: 0
+
+.coniglio-storage
+    width: calc($rem*5.75)
+
+.span1
+    color: #ffb237
+    font-weight: $weight600
+    line-height: $h-height
+    font-size: calc($rem*0.875)
+    text-transform: uppercase
+    margin-right: 4px
+
+.span3
+    color: rgb(255, 255, 255)
+    font-weight: $weight600
+    line-height: $h-height
+    font-size: calc($rem*0.875)
+    margin-right: 4px
+
+.span2-4
+    color: rgb(189, 194, 196)
+    font-weight: $weight400
+    line-height: $h-height
+    font-size: calc($rem*0.875)
+    margin-right: 4px
+
+.phishing
+    width: 60%   
+    height: 80%
+    background: rgba(39, 38, 44, .4)
+    border-radius: $rem
+    padding: calc($rem*0.5)
+    display: flex
+    align-items: center
+
+.storage
+    width: 100%
+    height: calc($rem*4.375)  
+    background: $main-card-color
+    @include flex
+    gap: 0
+
+.close-storage // bottone chiusura banner
+    background: transparent
+    width: calc($rem*3)
+    cursor: pointer
+    border: none
+    @extend .btn
+    
+.logo 
+    display: flex
+    align-items: center
+    height: 100%
+    
+.sinistra,.nav-menu
+    @include flex
+    width: 100%
+    height: 100%
+    justify-content: flex-start
+    gap: 0
+    
+.link-container
+    @include flex
+    gap: 0
+    height: 100%
+    margin-left: calc($rem*2)
+
+.links // link menù nav parte sx
+    padding: calc($rem*1) 
+    @extend .logo
+    position: relative    
+    &:hover
+        background: $secondary-btn-color
+        border-radius: $rem
+        padding: 0 calc($rem*1)
+        height: calc($rem*3)
+    &:hover .content-trade
+        display: block
+         
+        
+.destra,.svg-nav
+    @extend .sinistra,.nav-menu
+    justify-content: flex-end
+
+.money // div con icona e valuta
+    display: flex
+    margin-right: ($rem*1)
+    font-weight: $weight600
+    cursor: pointer
+    &:hover .coniglio-nav
+        margin-right: ($rem*0.6)
+        transition: transform 0.3s ease 0s
+        &:hover
+        transform: scale(1.2)
+
+        
+.coniglio-nav // svg coniglio parte dx
+    margin-right: ($rem*0.6)
+    transition: transform 0.3s ease 0s
+    &:hover
+        transform: scale(1.2)
+
+.bottoni-destra
+    @include  flex
+    margin-right: ($rem*0.6)
+
+.bottone // connect Wallet 
+    @extend .btn
+    @include icon-hover
+    font-family: $font
+
+.bottone-ingranaggio // icona impostazioni
+    @extend .btn-transparent
+    @extend .btn    
+    @include icon-hover
+    margin-right: calc($rem*0.2) 
+    cursor: pointer
+    &:hover
+        opacity: 1
+    &:active
+        opacity: 1
+        transform: translateY(0)     
+
+.bottone-lingue // bottone lingue  
+   @extend  .bottone-ingranaggio
+   @include scroll-bar
+   @include language
+   cursor: pointer
+//    @extend .btn-transparent
+     
+.lista-lingue    
+   @include scroll-bar
+   @include language
+   cursor: pointer  
+
+.center-logo
+    height: 100%
+    display: flex
+    align-items: center
+
+.content-trade
+    display: none
+    position: absolute
+    top: 100%
+    background-color: $bg-nav-components
+    border: 1px solid $border-nav-components
+    border-radius: $rem
+    width: calc( $rem * 17.5 )
+    padding: 4px 0  
+    transform: translate(-15px, 2px)
+
+.riga-divisoria
+    margin: 4px 0
+    border-color: $border-nav-components
+    border-style: solid
+    border-width: 1px 0px 0px
+        
+.spigoli-sopra
+    border-top-left-radius: calc( $rem / 2 )
+    border-top-right-radius: calc( $rem / 2 )
+
+.spigoli-sotto
+    border-bottom-left-radius: calc( $rem / 2 )
+    border-bottom-right-radius: calc( $rem / 2 )
+
+.dropdown-a
+    @include flex
+    padding: 0 $rem
+    height: calc( $rem * 3 )
+    width: 100%
+    color: $p-color
+    text-decoration: none
+    justify-content: space-between
+    &:hover 
+        background-color: $secondary-btn-color
+   
+         
+        
+       
+       
+
+
+        

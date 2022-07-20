@@ -4,9 +4,10 @@
     line-height: 1
     font-size: $rem
     font-weight: $weight600
-    height: calc($rem*3)
-    padding: 0 calc($rem*1.5)
+    height: calc($rem*2) // da 3 a 2
+    padding: 0 $rem // da 1.5 a 1 
     background-color: $secondary-color
+    color: $white // mancava
     border-radius: $bradius16
     cursor: pointer
     &:hover
@@ -16,7 +17,7 @@
         transform: translateY(1px)
 
 .btn-transparent
-    @include btn
+    @extends .btn 
     color: $secondary-color
     background-color: transparent
     padding: 0
