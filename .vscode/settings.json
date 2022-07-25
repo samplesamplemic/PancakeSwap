@@ -1,0 +1,16 @@
+{
+    "emmet.preferences": {
+
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact",
+    },
+    "emmet.syntaxProfiles": {
+        "html": {
+            "filters": "bem"
+        }
+    }
+    },
+    "tabnine.disableFileRegex": [
+    
+    ]
+}
