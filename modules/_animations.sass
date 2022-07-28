@@ -1,7 +1,6 @@
-// Animations
-@mixin floating ($animation-duration:1.5s, $delay:1s, $x, $y)
+@mixin floating($keyframeName, $x, $y, $animation-duration:1.5s,  $delay:1s )
    
-    @keyframes floating
+    @keyframes #{$keyframeName}
         0%
             transform: translate(0, 0)
         50%
@@ -9,45 +8,7 @@
         100%
             transform: translate(0, 0)
 
-    animation-name: floating
-    animation-duration: $animation-duration
-    animation-delay: $delay
-    animation-iteration-count: infinite
-    transition-timing-function: ease-in-out
-    animation-direction: normal
-    animation-fill-mode: none
-    animation-play-state: running
-
-@mixin floating2 ($animation-duration:1.5s, $delay:1s, $x, $y)
-   
-    @keyframes floating2
-        0%
-            transform: translate(0, 0)
-        50%
-            transform: translate($x, $y)
-        100%
-            transform: translate(0, 0)
-
-    animation-name: floating2
-    animation-duration: $animation-duration
-    animation-delay: $delay
-    animation-iteration-count: infinite
-    transition-timing-function: ease-in-out
-    animation-direction: normal
-    animation-fill-mode: none
-    animation-play-state: running
-
-@mixin floating3 ($animation-duration:1.5s, $delay:1s, $x, $y)
-   
-    @keyframes floating3
-        0%
-            transform: translate(0, 0)
-        50%
-            transform: translate($x, $y)
-        100%
-            transform: translate(0, 0)
-
-    animation-name: floating3
+    animation-name: $keyframeName
     animation-duration: $animation-duration
     animation-delay: $delay
     animation-iteration-count: infinite
