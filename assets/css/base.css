@@ -238,11 +238,11 @@ body ::-webkit-scrollbar-track, a ::-webkit-scrollbar-track, button ::-webkit-sc
   transition: transform 0.3s ease 0s;
   transform: scale(1.2);
 }
-.coniglio-nav {
+.money .coniglio-nav {
   margin-right: 0.6rem;
   transition: transform 0.3s ease 0s;
 }
-.coniglio-nav:hover {
+.money .coniglio-nav:hover {
   transform: scale(1.2);
 }
 
