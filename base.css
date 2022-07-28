@@ -384,6 +384,10 @@ body ::-webkit-scrollbar-track, a ::-webkit-scrollbar-track, button ::-webkit-sc
 .icon-money {
   display: flex;
   gap: 0.5rem;
+  cursor: pointer;
+}
+.icon-money:hover svg {
+  transform: scale(1.2);
 }
 .icon-money svg {
   transition: transform 0.3s ease 0s;
