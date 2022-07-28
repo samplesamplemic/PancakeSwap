@@ -528,7 +528,16 @@
     });
 
     //close connect-wallet
-    document.querySelector(".wallet-close").onclick = () => {
+    window.onclick = (e) => {
+      if(document.querySelector(".wallet").contains(e.target) || document.querySelector(".connect-wallet-btn").contains(e.target)){
+
+      } else {
+        closeWallet();
+        console.log('click outside');
+      }
+    }
+    document.querySelector(".wallet-close").onclick = closeWallet;
+    function closeWallet() {
       if (window.innerWidth < 851) {
         connectWallet.style.zIndex = "-1";
         connectWallet.style.animation = "close-wallet 0.35s ease";
