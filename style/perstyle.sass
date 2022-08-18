@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700&display=swap')
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box   
+
+body
+    font-family: Kanit, sans-serif
+    background-color: rgb(8, 6, 11)
+#bg
+   
+   max-width: 1200px
+
+#select-coin 
+    background-color: #27262c
+    color: rgb(244, 238, 255)
+    border-block: 2px solid rgb(56, 50, 65)
+
+.chart
+   background-color: #27262c
+   border-block: 2px solid rgb(56, 50, 65)
+
+
+.title-table 
+    color: rgb(154, 106, 255)
+    
+.table 
+    background-color: rgb(39, 38, 44)
+    border-radius: 16px
+    border-block: 2px solid rgb(56, 50, 65)
+    .table-row 
+        color: rgb(244, 238, 255)
+        div
+            border-bottom: 1px solid rgb(56, 50, 65)
+            padding: 1rem
+            white-space: nowrap
+        div:first-child
+            text-align: left
+            padding-left: 2rem
+            img
+                 margin-right: .5rem
+
+#name-title-table 
+    //text-align: center    
+    padding-left: 2.5rem    
+
+.paginationjs-pages > ul 
+    display: flex
+    gap: 1rem
+    margin-block: 1rem
+    a 
+     color: white
+
+.paginationjs
+    display: table-row
+    position: relative
+    transform: translateX(calc(50% - 101.5px))
+
+.paginationjs-pages
+    ul>li:first-child, ul>li:last-child
+        background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' color='textDisabled' fill='white' width='20px' xmlns='http://www.w3.org/2000/svg' class='sc-8a800401-0 iJKGYP'><path d='M19 11H7.82998L12.71 6.12C13.1 5.73 13.1 5.09 12.71 4.7C12.32 4.31 11.69 4.31 11.3 4.7L4.70998 11.29C4.31998 11.68 4.31998 12.31 4.70998 12.7L11.3 19.29C11.69 19.68 12.32 19.68 12.71 19.29C13.1 18.9 13.1 18.27 12.71 17.88L7.82998 13H19C19.55 13 20 12.55 20 12C20 11.45 19.55 11 19 11Z'></path></svg>")
+        background-repeat: no-repeat
+        background-position-y: center
+        width: 1rem
+        cursor: pointer
+        a
+            display: none
+    ul>li:last-child
+        background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' color='primary' fill='white' width='20px' xmlns='http://www.w3.org/2000/svg' class='sc-8a800401-0 exdUOd'><path d='M5 13H16.17L11.29 17.88C10.9 18.27 10.9 18.91 11.29 19.3C11.68 19.69 12.31 19.69 12.7 19.3L19.29 12.71C19.68 12.32 19.68 11.69 19.29 11.3L12.71 4.7C12.32 4.31 11.69 4.31 11.3 4.7C10.91 5.09 10.91 5.72 11.3 6.11L16.17 11H5C4.45 11 4 11.45 4 12C4 12.55 4.45 13 5 13Z'></path></svg>")
+       
+// .carousel
+//     //display: flex
+//     div > img
+//         width: 5rem
+
+div#bg 
+    overflow: hidden // ATTENTION to the parent element ALWAYS 
+    margin: auto
+
+
+@keyframes scroll 
+    0% 
+        transform: translateX(50%)
+    100% 
+        transform: translateX(-50%)
+
+
+.carousel
+    -webkit-animation: scroll 30s alternate linear //infinite
+    animation: scroll 30s linear alternate //infinite 
+    display: flex
+    gap: 1rem
+    width: fit-content
+    //max-width: 1200px
+    background-color: rgb(39, 38, 44)
+    transform: translateX(-50%)
+    &:hover
+        animation-play-state: paused
+        cursor: ew-resize
+    &:before
+        content: ""
+        position: absolute
+
+
+#carousel-container
+    background-color: rgb(39, 38, 44)
+    min-height: 146px
+    border-block: 2px solid rgb(56, 50, 65)
+
+.card
+    border-block: 2px solid rgb(56, 50, 65)
+    color:  rgb(244, 238, 255)
+    min-width: 190px
+    //width: 15rem
+    span
+        color:  rgb(244, 238, 255)
+
+.toke 
+    color: rgb(244, 238, 255)

@@ -1,0 +1,7 @@
+pool
+base_symbol/quote_symbol : liquidity
+
+token
+logo - name(symbol): price , price_change_percentage_24h , market_cap,
+
+/////////////////////////////////////////
