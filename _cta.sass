@@ -6,13 +6,13 @@
 body
     height: 100vh
 
-.cta
+.cta-top
     display: flex
     flex-direction: column
     width: 100%
     height: 100%
 
-.cta-container
+.cta-top_container
     flex: 100%
     display: flex
     position: relative
@@ -24,7 +24,7 @@ body
     justify-content: center
     align-items: center
 
-.svg-container
+.svg-top_container
     flex: 20%
     justify-content: flex-start
     z-index: -1
@@ -101,6 +101,175 @@ body
     width: 50%
     height: 50%
 
-.btc, .bnb, .cake
+// .btc, .bnb, .cake
+//     position: absolute
+//     @include floating(floating, 6px, 5px, 3s, .33s )
+
+.btc 
+  position: absolute
+  animation-name: floating
+  animation-duration: 3s
+  animation-delay: 0.33s
+  animation-iteration-count: infinite
+  transition-timing-function: ease-in-out
+  animation-direction: normal
+  animation-fill-mode: none
+  animation-play-state: running
+
+@keyframes floating 
+  0% 
+    transform: translate(0, 0)
+  
+  50% 
+    transform: translate(6px, 5px)
+  
+  100% 
+    transform: translate(0, 0)
+  
+
+
+.bnb 
+  position: absolute
+  animation-name: floatin2
+  animation-duration: 3s
+  animation-delay: 1s
+  animation-iteration-count: infinite
+  transition-timing-function: ease-in-out
+  animation-direction: normal
+  animation-fill-mode: none
+  animation-play-state: running
+
+@keyframes floatin2 
+  0% 
+    transform: translate(0, 0)
+  
+  50% 
+    transform: translate(3px, 15px)
+  
+  100% 
+    transform: translate(0, 0)
+  
+
+
+.cake 
+  position: absolute
+  animation-name: floating3
+  animation-duration: 3s
+  animation-delay: 0.66s
+  animation-iteration-count: infinite
+  transition-timing-function: ease-in-out
+  animation-direction: normal
+  animation-fill-mode: none
+  animation-play-state: running
+
+@keyframes floating3 
+  0% 
+    transform: translate(0, 0)
+  
+  50% 
+    transform: translate(5px, 10px)
+  
+  100% 
+    transform: translate(0, 0)
+
+// SECOND CTA PAGE 
+// SECOND CTA PAGE 
+// SECOND CTA PAGE 
+// SECOND CTA PAGE 
+// SECOND CTA PAGE 
+
+.cta-bot
+    display: flex
+    flex-direction: column
+    width: 100%
+    height: 100%
+
+.cta-bot_container
+    flex: 100%
+    display: flex
+    position: relative
+    flex-direction: column
+    -webkit-box-align: center
+    align-items: center
+    z-index: 1
+    background: linear-gradient(166.77deg, rgb(59, 65, 85) 0%, rgb(58, 48, 69) 100%)
+    justify-content: center
+    align-items: center
+
+.svg-bot_container
+    flex: 20%
+    justify-content: flex-start
+    z-index: -1
+    overflow: hidden
     position: absolute
-    @include floating(floating, 6px, 5px, 3s, .33s )
+    width: 100%
+    height: 100%
+    right: 0px
+    top: 0px
+
+.svg-bot_bg
+    fill: rgb(8, 6, 11)
+    width: 150%
+    height: 100%
+    max-height: 48px
+
+.content-bot_container
+    position: relative
+    flex-direction: column
+    -webkit-box-align: center
+    align-items: center
+    z-index: 1
+    padding: 48px 0px
+
+.content-items_container
+    display: flex
+    flex-direction: column
+
+@media screen and (min-width: 852px)
+    .content-items 
+        flex-direction: row-reverse
+        -webkit-box-align: center
+        align-items: center
+
+    .content-container_text
+        margin-left: 64px
+
+    .content-container_img
+        display: flex
+        flex: 1 1 0%
+        margin-bottom: 0px
+        height: 100%
+        width: 100%
+
+    .h2-bot_container
+        font-size: 40px
+
+.content-items
+    display: flex
+    flex-direction: column-reverse
+    align-items: flex-end
+    -webkit-box-pack: center
+    justify-content: center
+
+.content-container_text
+    align-self: center
+    display: flex
+    flex-direction: column
+    flex: 1 1 0%
+
+.h2-bot_container
+    font-size: 32px
+    font-weight: 600
+    line-height: 1.1
+    color: rgb(244, 238, 255)
+    margin-bottom: 24px
+
+.content-container_img
+    height: 192px
+    width: 192px
+    margin-bottom: 24px
+
+.content-container_stats
+    display: flex
+    flex-direction: column
+    margin-top: 24px
