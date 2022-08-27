@@ -94,7 +94,7 @@ img {
 }
 
 body {
-  height: 100vh;
+  height: 100%;
 }
 
 .cta-main_container {
@@ -110,7 +110,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 80%;
+  height: 100%;
 }
 
 .cta-top_container {
@@ -303,7 +303,7 @@ body {
   justify-content: space-between;
   align-items: stretch;
   width: 100%;
-  height: 20%;
+  height: 100%;
 }
 
 .cta-bot_container {
@@ -735,6 +735,13 @@ body {
   visibility: visible;
   margin-top: 0px;
   overflow: hidden;
+}
+
+.scoreboard-hidden_container {
+  width: 3rem;
+  height: 3rem;
+  visibility: hidden;
+  border: 1px red solid;
 }
 
 body {
