@@ -440,6 +440,17 @@ body
     fill: rgb(184, 173, 210)
     flex-shrink: 0
 
+.grid-stats_container
+    height: 240px
+
+@media screen and (min-width: 576px)
+    .stats-table
+        gap: 16px
+        grid-template-columns: repeat(5, auto)
+    .stats-table_secondary
+        gap: 16px
+        grid-template-columns: repeat(5, auto)
+
 @media screen and (min-width: 852px)
     .top-container_text
         align-self: center
@@ -472,3 +483,91 @@ body
 
     .h2-stats
         font-size: $md
+
+    .grid-stats_container
+        height: 80px
+
+    .stats-table
+        gap: 32px
+
+    .stats-table_secondary
+        gap: 32px
+
+.stats-table
+    display: grid
+    grid-template-columns: repeat(2, auto)
+
+.stats-container
+    position: absolute
+    display: flex
+    gap: 1.5rem
+
+.heading-stats_container
+    overflow: hidden
+    visibility: visible
+    display: flex
+    top: 0px
+    opacity: 1
+    margin-top: 0px
+    transition: opacity 0s ease 0s, margin-top 0s ease 0s, all 0.4s ease-out 0s
+    flex-direction: column
+    padding-left: 1.5rem
+    border-left: 1px solid rgb(38, 33, 48)
+    &:nth-child(1)
+        border-left: none
+
+.heading-stats
+    color: rgb(154, 106, 255)
+    font-weight: $weight600
+    line-height: 1.5
+    margin-bottom: 8px
+    font-size: 12px
+
+.percentage-stats_container
+    gap: 4px
+    display: flex
+
+.percentage-stats
+    color: rgb(244, 238, 255)
+    font-weight: $weight600
+    line-height: 1.1
+    font-size: 16px
+
+.bottom-text_stats
+    color: rgb(184, 173, 210)
+    font-weight: $weight400
+    line-height: 1.5
+    font-size: 16px
+
+.stats-table_secondary
+    display: grid
+    grid-template-columns: repeat(2, auto)
+
+.secondary-stats
+    overflow: hidden
+    visibility: hidden
+    display: flex
+    top: 0px
+    opacity: 1
+    margin-top: 100px
+    transition: opacity 0s ease 0s, margin-top 0s ease 0s, all 0.4s ease-out 0s
+    flex-direction: column
+    padding-left: 1.5rem
+    border-left: 1px solid rgb(38, 33, 48)
+    &:nth-child(1)
+        border-left: none
+
+.stats-secondary_container
+    position: relative
+    display: flex
+    gap: 1.5rem
+
+.hidden-table
+    visibility: hidden
+    margin-top: 100px
+    overflow: hidden
+
+.hidden-table_secondary
+    visibility: visible
+    margin-top: 0px
+    overflow: hidden
