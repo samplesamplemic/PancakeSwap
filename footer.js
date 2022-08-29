@@ -39,7 +39,6 @@ changeStatsOnLoad = () => {
             secondaryStats.forEach(element => element.classList.remove('hidden-table_secondary'))
         } else secondaryStats.forEach(element => element.classList.add('hidden-table_secondary'))
     })
-    console.log("ciao");
 }
 
 window.addEventListener ? 

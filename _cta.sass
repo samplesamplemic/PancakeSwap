@@ -6,6 +6,34 @@
 body
     height: 100%
 
+@media screen and (min-width: 968px)
+    .content-container
+        padding-top: 48px
+        padding-bottom: 48px
+
+@media screen and (max-width: 852px)
+    .content-container_layer
+        flex-direction: row
+        -webkit-box-align: center
+        align-items: center
+        flex-direction: column-reverse
+        align-items: flex-end
+
+    .top-container_text
+        align-self: center
+        margin-right: 64px
+        margin-left: 2rem
+
+@media screen and (min-width: 576px)
+    .content-container
+        padding-top: 32px
+        padding-bottom: 32px
+
+@media screen and (min-width: 370px)
+    .content-container
+        padding-top: 24px
+        padding-bottom: 24px
+
 .cta-main_container
     height: 100vh
     display: flex
@@ -52,20 +80,23 @@ body
     max-height: 48px
 
 .content-container
-    flex: 80%
-    @include flex
-    gap: 0
     margin: 0px
     width: 100%
     max-width: 968px
-    max-height: 40%
-    padding-left: 2rem
+    min-height: auto
+    padding-top: 16px
+    padding-bottom: 16px
+
+.content-container_layer
+    display: flex
+    -webkit-box-pack: center
+    justify-content: center
 
 .top-container_text
     display: flex
     flex-direction: column
     flex: 1 1 0%
-    align-self: flex-start
+    align-self: center
 
 .h2-content_text
     font-size: $xl
@@ -248,7 +279,7 @@ body
     display: flex
     flex-direction: column
     flex: 1 1 0%
-    align-self: flex-start
+    align-self: center
 
 .h2-bot_container
     font-size: 32px
@@ -384,6 +415,7 @@ body
     position: absolute
     top: 0px
     left: 0px
+    margin-right: 0.5rem
     .img
         max-height: 100%
         width: auto
@@ -401,7 +433,8 @@ body
 
 .content-stats
     display: flex
-    margin-bottom: 24px
+    margin-bottom: 24px 
+    margin-left: 1.5rem
 
 .h2-stats
     font-size: $md
@@ -441,6 +474,7 @@ body
     flex-shrink: 0
 
 .grid-stats_container
+    display: grid
     height: 240px
 
 @media screen and (min-width: 576px)
@@ -451,26 +485,22 @@ body
         gap: 16px
         grid-template-columns: repeat(5, auto)
 
-@media screen and (min-width: 852px)
-    .top-container_text
-        align-self: center
-        margin-right: 64px
+@media screen and (max-width: 852px)
+    .bot-container_text
+        margin-left: 1rem
 
     .h2-content_text
-        font-size: $xl
+        font-size: $md
         font-weight: $weight600
         line-height: 1.1
         color: rgb(244, 238, 255)
         margin-bottom: 24px
 
+@media screen and (min-width: 852px)
     .content-items 
         flex-direction: row-reverse
         -webkit-box-align: center
         align-items: center
-
-    .bot-container_text
-        align-self: center
-        margin-left: 64px
 
     .bot-container_img
         flex: 1 1 0%
@@ -573,7 +603,25 @@ body
     overflow: hidden
 
 .scoreboard-hidden_container
-    width: 3rem
-    height: 3rem
+    width: 4rem
+    height: 4rem
     visibility: hidden
     border: 1px red solid
+
+@media screen and (max-width: 852px)
+    .stats-secondary_container
+        display: grid
+        grid-template-columns: repeat(2, auto)
+
+    .stats-container
+        display: grid
+        grid-template-columns: repeat(2, auto)
+
+    .secondary-stats
+        margin-top: 2rem
+
+    .hidden-table_secondary
+        margin-top: 0rem
+
+    .hidden-table
+        margin-top: 2rem
