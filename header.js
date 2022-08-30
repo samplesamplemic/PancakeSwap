@@ -10,14 +10,17 @@ const popup = document.querySelector(".popup-bg");
 const ingranaggio = document
   .querySelector(".bottone-ingranaggio")
   .addEventListener("click", (e) => {
-    popup.classList.toggle("hidden");
+    popup.classList.remove("hidden");
     popup.classList.add("animation-popup-bg");
+    popup.classList.remove("animation-popup-bg-close");
   });
 
 const close = document
-  .querySelector(".close-settings")
+  .querySelector(".close-settings, .overlay-bg")
   .addEventListener("click", (e) => {
-    popup.classList.add("hidden");
+    e.stopImmediatePropagation();
+    popup.classList.remove("animation-popup-bg");
+    popup.classList.add("animation-popup-bg-close");
   });
 
 let occhi = document.querySelector(".logo");

@@ -281,6 +281,7 @@ body, a, button
     flex-direction: column
     min-width: calc($rem*20)
     gap: 0
+    z-index: 1
 
 
 .settings-title
@@ -360,6 +361,7 @@ body, a, button
 
 .transaction-btn
     background-color:$secondary-btn-color
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s
     @extend .btn
     color : $secondary-color
     margin: 4px 4px 0 0
@@ -384,7 +386,7 @@ body, a, button
         background-position: right 1px bottom 3px
     span::before
         background: url('../../sun-light-theme.svg')
-        background-position: left 2.2px bottom 3px
+        background-position: left 50% bottom 50% //avvisare michele
         background-repeat: no-repeat 
         background-color: rgb(255, 255, 255)
         height: 24px
@@ -421,7 +423,8 @@ body, a, button
     animation-direction: normal
     animation-fill-mode: forwards
     animation-play-state: running
-     
+    pointer-events: all
+
 @keyframes animation-popup
     
     0%
@@ -431,5 +434,27 @@ body, a, button
         opacity: 1  
 
 
+.animation-popup-bg-close
+    animation-name: animation-popup-close
+    animation-duration: 0.3s
+    animation-timing-function: ease-in-out
+    animation-delay: 0s
+    animation-iteration-count: 1
+    animation-direction: normal
+    animation-fill-mode: forwards
+    animation-play-state: running
+    pointer-events: none
 
+@keyframes animation-popup-close
+    
+    0%
+        opacity: 1
+
+    100%
+        opacity: 0
+
+.overlay-bg
+    width: 100vw
+    height: 100vh
+    position: absolute
         
