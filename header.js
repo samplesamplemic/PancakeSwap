@@ -25,6 +25,7 @@ const close = document
 
 let occhi = document.querySelector(".logo");
 const eye = document.querySelector(".eye");
+const eye2 = document.querySelector(".eye2");
 
 occhi.addEventListener("mouseover", (e) => {
   eye.style.animationDelay = "20ms";
@@ -32,17 +33,21 @@ occhi.addEventListener("mouseover", (e) => {
   eye.style.animationIterationCount = 1;
   eye.style.animationName = "occhi";
   eye.style.transformOrigin = "center 60% 0px";
+  eye2.style.animationDelay = "20ms";
+  eye2.style.animationDuration = "350ms";
+  eye2.style.animationIterationCount = 1;
+  eye2.style.animationName = "occhi";
+  eye2.style.transformOrigin = "center 60% 0px";
 });
 
 occhi.addEventListener("mouseout", (e) => {
   eye.style = null;
+  eye2.style = null;
 });
 
 let portafoglio = document.querySelector(".connect-wallet-btn");
-let logodesktop = document.querySelector(".logo-desktop");
-let logo966 = document.querySelector(".logo-966")
 
-function media966(x) {
+function media851(x) {
   if (x.matches) {
     portafoglio.innerHTML = "Connect";
   } else {
@@ -50,6 +55,6 @@ function media966(x) {
   }
 }
 
-const width966 = window.matchMedia("(max-width: 966px)")
-media966(width966)
-width966.addEventListener('change', media966)
+const width851 = window.matchMedia("(max-width: 851px)");
+media851(width851);
+width851.addEventListener("change", media851);

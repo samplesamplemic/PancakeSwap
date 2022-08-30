@@ -109,6 +109,7 @@ body, a, button
     padding: calc($rem*0.5)
     display: flex
     align-items: center
+    flex-wrap: wrap
 
 .storage
     width: 100%
@@ -460,4 +461,24 @@ body, a, button
     width: 100vw
     height: 100vh
     position: absolute
-        
+
+@media screen and (max-width: 966px)
+    .logo-desktop
+        display: none
+    .logo-966
+        display: block    
+
+@media screen and (max-width: 851px)
+    .logo-desktop
+        display: none
+    .logo-966
+        display: block
+    .coniglio-storage
+        display: none
+    .phishing
+        background: transparent
+        width: 100%
+    .storage
+       background: linear-gradient(0deg, rgba(39, 38, 44, 0.4), rgba(39, 38, 44, 0.4)), linear-gradient(rgb(128, 81, 214) 0%, #492286 100%)
+    .money
+        display: none
