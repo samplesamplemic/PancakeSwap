@@ -37,3 +37,19 @@ occhi.addEventListener("mouseover", (e) => {
 occhi.addEventListener("mouseout", (e) => {
   eye.style = null;
 });
+
+let portafoglio = document.querySelector(".connect-wallet-btn");
+let logodesktop = document.querySelector(".logo-desktop");
+let logo966 = document.querySelector(".logo-966")
+
+function media966(x) {
+  if (x.matches) {
+    portafoglio.innerHTML = "Connect";
+  } else {
+    portafoglio.innerHTML = "Connect Wallet";
+  }
+}
+
+const width966 = window.matchMedia("(max-width: 966px)")
+media966(width966)
+width966.addEventListener('change', media966)
