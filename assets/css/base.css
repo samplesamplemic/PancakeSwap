@@ -10,7 +10,7 @@ img {
   width: 100%;
 }
 
-.btn, .bottone-ingranaggio, .bottone-lingue, .bottone, .close-storage {
+.btn, .transaction-btn, .close-settings, .bottone-ingranaggio, .bottone-lingue, .bottone, .close-storage {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,10 +26,10 @@ img {
   border-radius: 1rem;
   cursor: pointer;
 }
-.btn:hover, .bottone-ingranaggio:hover, .bottone-lingue:hover, .bottone:hover, .close-storage:hover {
+.btn:hover, .transaction-btn:hover, .close-settings:hover, .bottone-ingranaggio:hover, .bottone-lingue:hover, .bottone:hover, .close-storage:hover {
   opacity: 0.65;
 }
-.btn:active, .bottone-ingranaggio:active, .bottone-lingue:active, .bottone:active, .close-storage:active {
+.btn:active, .transaction-btn:active, .close-settings:active, .bottone-ingranaggio:active, .bottone-lingue:active, .bottone:active, .close-storage:active {
   opacity: 0.85;
   transform: translateY(1px);
 }
@@ -41,27 +41,29 @@ img {
   padding: 0;
 }
 
-.btn-switch {
+.btn-switch, .switch-button, .switch-theme-btn {
   position: relative;
   display: inline-block;
   width: 3.5rem;
   height: 2rem;
 }
-.btn-switch input[type=checkbox] {
+.btn-switch input[type=checkbox], .switch-button input[type=checkbox], .switch-theme-btn input[type=checkbox] {
   opacity: 0;
   width: 0;
   height: 0;
 }
-.btn-switch input[type=checkbox]:checked + span {
+.btn-switch input[type=checkbox]:checked + span, .switch-button input[type=checkbox]:checked + span, .switch-theme-btn input[type=checkbox]:checked + span {
   background-color: #31d0aa;
 }
-.btn-switch input[type=checkbox]:focus + span {
+.btn-switch input[type=checkbox]:focus + span, .switch-button input[type=checkbox]:focus + span, .switch-theme-btn input[type=checkbox]:focus + span {
   box-shadow: 0 0 1px #2196F3;
 }
-.btn-switch input[type=checkbox]:checked + span:before {
-  transform: translateX(26px);
+.btn-switch input[type=checkbox]:checked + span:before, .switch-button input[type=checkbox]:checked + span:before, .switch-theme-btn input[type=checkbox]:checked + span:before {
+  transform: translateX(24px);
 }
-.btn-switch span {
+.btn-switch span, .switch-button span, .switch-theme-btn span {
+  display: flex;
+  align-items: center;
   border-radius: 34px;
   position: absolute;
   cursor: pointer;
@@ -72,17 +74,16 @@ img {
   background-color: #ccc;
   transition: 0.4s;
 }
-.btn-switch span:before {
+.btn-switch span:before, .switch-button span:before, .switch-theme-btn span:before {
   border-radius: 50%;
   position: absolute;
   content: "";
   height: 26px;
   width: 26px;
-  left: 4px;
-  bottom: 4px;
+  left: 3px;
   background-color: white;
 }
-.btn-switch span input:hover + span:before, .btn-switch span input:focus + span:before {
+.btn-switch span input:hover + span::before, .switch-button span input:hover + span::before, .switch-theme-btn span input:hover + span::before, .btn-switch span input:focus + span::before, .switch-button span input:focus + span::before, .switch-theme-btn span input:focus + span::before {
   box-shadow: rgb(118, 69, 217) 0px 0px 0px 1px, rgba(118, 69, 217, 0.6) 0px 0px 0px 4px;
 }
 
@@ -441,6 +442,13 @@ body ::-webkit-scrollbar-track, a ::-webkit-scrollbar-track, button ::-webkit-sc
   background-color: #353547;
 }
 
+.opacity-hover:hover {
+  opacity: 0.65;
+}
+.opacity-hover:active {
+  transform: translateY(1px);
+}
+
 @-webkit-keyframes occhi {
   0%, 100% {
     transform: scaleY(1);
@@ -456,6 +464,233 @@ body ::-webkit-scrollbar-track, a ::-webkit-scrollbar-track, button ::-webkit-sc
   }
   50% {
     transform: scaleY(0.1);
+  }
+}
+.popup-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(244, 238, 255, 0.6);
+  z-index: 20;
+}
+
+.hidden {
+  display: none;
+}
+
+.popup-component {
+  max-height: 790px;
+  overflow: hidden;
+  background-color: #27262c;
+  border-radius: 2rem;
+  box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column;
+  min-width: 20rem;
+  gap: 0;
+}
+
+.settings-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+  width: 100%;
+  height: 70px;
+  color: #f4eeff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(166.77deg, #3b4155 0%, #3a3045 100%);
+}
+
+.settings-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column;
+  width: 100%;
+  padding: 1.5rem;
+}
+
+.settings-global {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 0;
+}
+
+.global-title {
+  color: #9a6aff;
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  gap: 0;
+}
+
+.switch-mode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  justify-content: space-between;
+  gap: 0;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.dark-mode {
+  color: #f4eeff;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.setting-transaction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  width: 100%;
+}
+
+.close-settings {
+  background-color: transparent;
+}
+
+.transaction-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 0;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.transaction-title {
+  color: #f4eeff;
+  margin-right: 2px;
+}
+
+.transaction-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 0;
+  padding-bottom: 1.5rem;
+}
+
+.transaction-btn {
+  background-color: #353547;
+  color: #1fc7d4;
+  margin: 4px 4px 0 0;
+}
+.transaction-btn:focus {
+  color: #fff;
+  background-color: #1fc7d4;
+}
+
+.switch-theme-btn input:checked + span {
+  background-color: #666171 !important;
+}
+.switch-theme-btn span {
+  justify-content: space-around;
+}
+.switch-theme-btn input:checked + span::before {
+  background: url("../../moon-dark-theme.svg");
+  background-repeat: no-repeat;
+  background-color: rgb(39, 38, 44);
+  height: 24px;
+  width: 24px;
+  background-position: right 1px bottom 3px;
+}
+.switch-theme-btn span::before {
+  background: url("../../sun-light-theme.svg");
+  background-position: left 2.2px bottom 3px;
+  background-repeat: no-repeat;
+  background-color: rgb(255, 255, 255);
+  height: 24px;
+  width: 24px;
+  left: 4px;
+  box-shadow: rgb(118, 69, 217) 0px 0px 0px 1px, rgba(118, 69, 217, 0.6) 0px 0px 0px 4px;
+  transition: 0.3s ease-in-out;
+}
+
+.switch-button span {
+  background-color: #372f47;
+}
+.switch-button span::before {
+  background-color: #27262c;
+  transition: 0.3s ease-in-out;
+}
+.switch-button input[type=checkbox]:hover + span:before {
+  box-shadow: rgb(118, 69, 217) 0px 0px 0px 1px, rgba(118, 69, 217, 0.6) 0px 0px 0px 4px;
+}
+.switch-button input[type=checkbox]:focus + span:before {
+  box-shadow: rgb(118, 69, 217) 0px 0px 0px 1px, rgba(118, 69, 217, 0.6) 0px 0px 0px 4px;
+}
+.switch-button input[type=checkbox]:checked + span:before {
+  box-shadow: rgb(118, 69, 217) 0px 0px 0px 1px, rgba(118, 69, 217, 0.6) 0px 0px 0px 4px;
+}
+
+.animation-popup-bg {
+  -webkit-animation-name: animation-popup;
+          animation-name: animation-popup;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+@-webkit-keyframes animation-popup {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animation-popup {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 body {

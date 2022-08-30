@@ -37,10 +37,12 @@
         &:focus + span 
             box-shadow: 0 0 1px #2196F3
         &:checked + span:before
-            -webkit-transform: translateX(26px)
-            -ms-transform: translateX(26px)
-            transform: translateX(26px)
+            -webkit-transform: translateX(24px)
+            -ms-transform: translateX(24px)
+            transform: translateX(24px)
     span
+        display: flex
+        align-items: center
         border-radius: 34px 
         position: absolute
         cursor: pointer
@@ -57,8 +59,8 @@
             content: ""
             height: 26px
             width: 26px
-            left: 4px
-            bottom: 4px
+            left: 3px
+            //bottom: 4px
             background-color: white
-        input:hover + span:before, input:focus + span:before 
+        input:hover + span::before, input:focus + span::before 
             box-shadow: rgb(118 69 217) 0px 0px 0px 1px, rgb(118 69 217 / 60%) 0px 0px 0px 4px
