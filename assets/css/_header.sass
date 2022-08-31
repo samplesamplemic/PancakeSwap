@@ -13,6 +13,7 @@ nav
 
 .mobile-navbar
     @include flex
+    justify-content: space-around
     position: fixed
     bottom: 0px
     width: 100%
@@ -23,6 +24,24 @@ nav
     border-top: 1px solid rgb(56, 50, 65)
     z-index: 20
     gap: 0
+    
+
+.mobile-btn
+    border: 0px     
+    background: transparent
+    cursor: pointer 
+    padding: 0px 12px
+    a
+        height: 44px
+        @include flex
+        justify-content: center
+        flex-direction: column
+        text-decoration: none
+        gap:0
+        color: $p-color
+        font-size: 10px
+        box-sizing: border-box
+
 
 @mixin scroll-bar
     ::-webkit-scrollbar
