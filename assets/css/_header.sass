@@ -33,23 +33,24 @@ body, a, button
             max-height: 400px
             overflow-y: auto
             transition: max-height 0s ease 0s, opacity 0.3s ease-in-out 0s
-            display: flex
+            pointer-events: auto
         div
             position: absolute
-            display: none
-            align-items: center
+            display: flex
             opacity: 0
             flex-direction: column
             z-index: 1
             background-color: $bg-nav-components
             padding: 16px
             border-radius: 4px
-            max-height: 0px
+            max-height: 0
             width: max-content
             transform: translate(-50%, 0px)
             left: 50%
             top: 100%
             transition: max-height 0s ease 0.3s, opacity 0.3s ease-in-out 0s
+            pointer-events: none
+            overflow: hidden
             a
                 color: rgb(244, 238, 255)
                 font-weight: $weight600
@@ -205,6 +206,7 @@ body, a, button
    @include scroll-bar
    @include language
    cursor: pointer
+   text-align: center
    a
     @extend .opacity-hover 
 

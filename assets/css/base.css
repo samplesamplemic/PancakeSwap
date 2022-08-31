@@ -278,6 +278,7 @@ body ::-webkit-scrollbar-track, a ::-webkit-scrollbar-track, button ::-webkit-sc
 .lista-lingue, .bottone-lingue {
   position: relative;
   cursor: pointer;
+  text-align: center;
 }
 .lista-lingue ::-webkit-scrollbar, .bottone-lingue ::-webkit-scrollbar {
   width: 8px;
@@ -295,19 +296,18 @@ body ::-webkit-scrollbar-track, a ::-webkit-scrollbar-track, button ::-webkit-sc
   max-height: 400px;
   overflow-y: auto;
   transition: max-height 0s ease 0s, opacity 0.3s ease-in-out 0s;
-  display: flex;
+  pointer-events: auto;
 }
 .lista-lingue div, .bottone-lingue div {
   position: absolute;
-  display: none;
-  align-items: center;
+  display: flex;
   opacity: 0;
   flex-direction: column;
   z-index: 1;
   background-color: #27262c;
   padding: 16px;
   border-radius: 4px;
-  max-height: 0px;
+  max-height: 0;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -315,6 +315,8 @@ body ::-webkit-scrollbar-track, a ::-webkit-scrollbar-track, button ::-webkit-sc
   left: 50%;
   top: 100%;
   transition: max-height 0s ease 0.3s, opacity 0.3s ease-in-out 0s;
+  pointer-events: none;
+  overflow: hidden;
 }
 .lista-lingue div a, .bottone-lingue div a {
   color: rgb(244, 238, 255);

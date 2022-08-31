@@ -28,7 +28,7 @@ const occhi = document.querySelector(".logo");
 const eye = document.querySelector(".eye");
 const eye2 = document.querySelector(".eye2");
 
-function animation(value, value) {
+function animation(value) {
   occhi.addEventListener("mouseover", (e) => {
     value.style.animationDelay = "20ms";
     value.style.animationDuration = "350ms";
@@ -41,7 +41,8 @@ function animation(value, value) {
     value.style = null;
   });
 }
-animation(eye, eye2);
+animation(eye);
+animation(eye2)
 
 let portafoglio = document.querySelector(".connect-wallet-btn");
 
