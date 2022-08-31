@@ -10,7 +10,7 @@ img {
   width: 100%;
 }
 
-.btn, .transaction-btn, .close-settings, .bottone-ingranaggio, .bottone-lingue, .bottone, .close-storage {
+.btn, .transaction-btn, .close-settings, .bottone, .bottone-ingranaggio, .bottone-lingue, .close-storage {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,10 +26,10 @@ img {
   border-radius: 1rem;
   cursor: pointer;
 }
-.btn:hover, .transaction-btn:hover, .close-settings:hover, .bottone-ingranaggio:hover, .bottone-lingue:hover, .bottone:hover, .close-storage:hover {
+.btn:hover, .transaction-btn:hover, .close-settings:hover, .bottone:hover, .bottone-ingranaggio:hover, .bottone-lingue:hover, .close-storage:hover {
   opacity: 0.65;
 }
-.btn:active, .transaction-btn:active, .close-settings:active, .bottone-ingranaggio:active, .bottone-lingue:active, .bottone:active, .close-storage:active {
+.btn:active, .transaction-btn:active, .close-settings:active, .bottone:active, .bottone-ingranaggio:active, .bottone-lingue:active, .close-storage:active {
   opacity: 0.85;
   transform: translateY(1px);
 }
@@ -139,7 +139,7 @@ body ::-webkit-scrollbar-track, a ::-webkit-scrollbar-track, button ::-webkit-sc
   margin-right: 4px;
 }
 
-.span3 {
+.span3, .span2-4 {
   color: rgb(255, 255, 255);
   font-weight: 600;
   line-height: 1.5;
@@ -150,9 +150,6 @@ body ::-webkit-scrollbar-track, a ::-webkit-scrollbar-track, button ::-webkit-sc
 .span2-4 {
   color: rgb(189, 194, 196);
   font-weight: 400;
-  line-height: 1.5;
-  font-size: 0.875rem;
-  margin-right: 4px;
 }
 
 .phishing {
@@ -188,10 +185,6 @@ body ::-webkit-scrollbar-track, a ::-webkit-scrollbar-track, button ::-webkit-sc
   display: flex;
   align-items: center;
   height: 100%;
-}
-
-.logo-966 {
-  display: none;
 }
 
 .sinistra, .destra, .svg-nav, .nav-menu {
@@ -260,10 +253,10 @@ body ::-webkit-scrollbar-track, a ::-webkit-scrollbar-track, button ::-webkit-sc
   margin-right: 0.6rem;
 }
 
-.bottone {
+.bottone, .bottone-ingranaggio, .bottone-lingue {
   font-family: "Kanit", sans-serif;
 }
-.bottone:hover {
+.bottone:hover, .bottone-ingranaggio:hover, .bottone-lingue:hover {
   transition-property: background-color, opacity;
   transition-duration: 0.2s, 0.2s;
   transition-timing-function: ease, ease;
@@ -275,12 +268,6 @@ body ::-webkit-scrollbar-track, a ::-webkit-scrollbar-track, button ::-webkit-sc
   cursor: pointer;
 }
 .bottone-ingranaggio:hover, .bottone-lingue:hover {
-  transition-property: background-color, opacity;
-  transition-duration: 0.2s, 0.2s;
-  transition-timing-function: ease, ease;
-  transition-delay: 0s, 0s;
-}
-.bottone-ingranaggio:hover, .bottone-lingue:hover {
   opacity: 1;
 }
 .bottone-ingranaggio:active, .bottone-lingue:active {
@@ -288,29 +275,29 @@ body ::-webkit-scrollbar-track, a ::-webkit-scrollbar-track, button ::-webkit-sc
   transform: translateY(0);
 }
 
-.bottone-lingue {
+.lista-lingue, .bottone-lingue {
   position: relative;
   cursor: pointer;
 }
-.bottone-lingue ::-webkit-scrollbar {
+.lista-lingue ::-webkit-scrollbar, .bottone-lingue ::-webkit-scrollbar {
   width: 8px;
 }
-.bottone-lingue ::-webkit-scrollbar-thumb {
+.lista-lingue ::-webkit-scrollbar-thumb, .bottone-lingue ::-webkit-scrollbar-thumb {
   background: rgb(184, 173, 210);
   border-radius: 8px;
 }
-.bottone-lingue ::-webkit-scrollbar-track {
+.lista-lingue ::-webkit-scrollbar-track, .bottone-lingue ::-webkit-scrollbar-track {
   box-shadow: rgb(55, 47, 71) 0px 0px 5px inset;
   border-radius: 10px;
 }
-.bottone-lingue:hover > div {
+.lista-lingue:hover > div, .bottone-lingue:hover > div {
   opacity: 1;
   max-height: 400px;
   overflow-y: auto;
   transition: max-height 0s ease 0s, opacity 0.3s ease-in-out 0s;
   display: flex;
 }
-.bottone-lingue div {
+.lista-lingue div, .bottone-lingue div {
   position: absolute;
   display: none;
   align-items: center;
@@ -329,7 +316,7 @@ body ::-webkit-scrollbar-track, a ::-webkit-scrollbar-track, button ::-webkit-sc
   top: 100%;
   transition: max-height 0s ease 0.3s, opacity 0.3s ease-in-out 0s;
 }
-.bottone-lingue div a {
+.lista-lingue div a, .bottone-lingue div a {
   color: rgb(244, 238, 255);
   font-weight: 600;
   line-height: 1.5;
@@ -337,65 +324,10 @@ body ::-webkit-scrollbar-track, a ::-webkit-scrollbar-track, button ::-webkit-sc
   padding: 0 8px;
   letter-spacing: 0.03rem;
 }
-.bottone-lingue div a:hover {
+.lista-lingue div a:hover, .bottone-lingue div a:hover {
   text-decoration: none;
   opacity: 0.65;
 }
-
-.lista-lingue {
-  position: relative;
-  cursor: pointer;
-}
-.lista-lingue ::-webkit-scrollbar {
-  width: 8px;
-}
-.lista-lingue ::-webkit-scrollbar-thumb {
-  background: rgb(184, 173, 210);
-  border-radius: 8px;
-}
-.lista-lingue ::-webkit-scrollbar-track {
-  box-shadow: rgb(55, 47, 71) 0px 0px 5px inset;
-  border-radius: 10px;
-}
-.lista-lingue:hover > div {
-  opacity: 1;
-  max-height: 400px;
-  overflow-y: auto;
-  transition: max-height 0s ease 0s, opacity 0.3s ease-in-out 0s;
-  display: flex;
-}
-.lista-lingue div {
-  position: absolute;
-  display: none;
-  align-items: center;
-  opacity: 0;
-  flex-direction: column;
-  z-index: 1;
-  background-color: #27262c;
-  padding: 16px;
-  border-radius: 4px;
-  max-height: 0px;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  transform: translate(-50%, 0px);
-  left: 50%;
-  top: 100%;
-  transition: max-height 0s ease 0.3s, opacity 0.3s ease-in-out 0s;
-}
-.lista-lingue div a {
-  color: rgb(244, 238, 255);
-  font-weight: 600;
-  line-height: 1.5;
-  min-height: 32px;
-  padding: 0 8px;
-  letter-spacing: 0.03rem;
-}
-.lista-lingue div a:hover {
-  text-decoration: none;
-  opacity: 0.65;
-}
-
 .center-logo {
   height: 100%;
   display: flex;
@@ -447,10 +379,10 @@ body ::-webkit-scrollbar-track, a ::-webkit-scrollbar-track, button ::-webkit-sc
   background-color: #353547;
 }
 
-.opacity-hover:hover {
+.opacity-hover:hover, .lista-lingue a:hover, .bottone-lingue a:hover {
   opacity: 0.65;
 }
-.opacity-hover:active {
+.opacity-hover:active, .lista-lingue a:active, .bottone-lingue a:active {
   transform: translateY(1px);
 }
 
@@ -481,10 +413,9 @@ body ::-webkit-scrollbar-track, a ::-webkit-scrollbar-track, button ::-webkit-sc
   height: 100vh;
   width: 100vw;
   background-color: rgba(244, 238, 255, 0.6);
-  z-index: 20;
 }
 
-.hidden {
+.hidden, .logo-966 {
   display: none;
 }
 
@@ -753,12 +684,6 @@ body ::-webkit-scrollbar-track, a ::-webkit-scrollbar-track, button ::-webkit-sc
   }
 }
 @media screen and (max-width: 851px) {
-  .logo-desktop {
-    display: none;
-  }
-  .logo-966 {
-    display: block;
-  }
   .coniglio-storage {
     display: none;
   }
@@ -770,6 +695,11 @@ body ::-webkit-scrollbar-track, a ::-webkit-scrollbar-track, button ::-webkit-sc
     background: linear-gradient(0deg, rgba(39, 38, 44, 0.4), rgba(39, 38, 44, 0.4)), linear-gradient(rgb(128, 81, 214) 0%, #492286 100%);
   }
   .money {
+    display: none;
+  }
+}
+@media screen and (max-width: 575px) {
+  .link-container {
     display: none;
   }
 }

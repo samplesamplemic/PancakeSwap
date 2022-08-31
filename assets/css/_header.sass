@@ -97,9 +97,7 @@ body, a, button
 .span2-4
     color: rgb(189, 194, 196)
     font-weight: $weight400
-    line-height: $h-height
-    font-size: calc($rem*0.875)
-    margin-right: 4px
+    @extend .span3
 
 .phishing
     width: 60%   
@@ -131,7 +129,7 @@ body, a, button
     height: 100%
 
 .logo-966
-    display: none
+    @extend .hidden
     
 .sinistra,.nav-menu
     @include flex
@@ -189,8 +187,7 @@ body, a, button
 
 .bottone-ingranaggio // icona impostazioni
     @extend .btn-transparent
-    @extend .btn    
-    @include icon-hover
+    @extend .bottone
     margin-right: calc($rem*0.2) 
     cursor: pointer
     &:hover
@@ -201,15 +198,15 @@ body, a, button
 
 .bottone-lingue // bottone lingue  
    @extend  .bottone-ingranaggio
-   @include scroll-bar
-   @include language
-   cursor: pointer
+   @extend  .lista-lingue
 //    @extend .btn-transparent
      
 .lista-lingue    
    @include scroll-bar
    @include language
-   cursor: pointer  
+   cursor: pointer
+   a
+    @extend .opacity-hover 
 
 .center-logo
     height: 100%
@@ -273,7 +270,7 @@ body, a, button
     height: 100vh
     width: 100vw 
     background-color: rgba(244, 238, 255, 0.6)
-    z-index: 20
+   
 
 .hidden
     display: none
@@ -414,10 +411,7 @@ body, a, button
              box-shadow: rgb(118 69 217) 0px 0px 0px 1px, rgb(118 69 217 / 60%) 0px 0px 0px 4px
         &:checked + span:before
              box-shadow: rgb(118 69 217) 0px 0px 0px 1px, rgb(118 69 217 / 60%) 0px 0px 0px 4px
-            
 
-
-    
 .animation-popup-bg
     animation-name: animation-popup
     animation-duration: 0.3s
@@ -461,6 +455,7 @@ body, a, button
     width: 100vw
     height: 100vh
     position: absolute
+   
 
 @media screen and (max-width: 966px)
     .logo-desktop
@@ -469,10 +464,6 @@ body, a, button
         display: block    
 
 @media screen and (max-width: 851px)
-    .logo-desktop
-        display: none
-    .logo-966
-        display: block
     .coniglio-storage
         display: none
     .phishing
@@ -481,4 +472,8 @@ body, a, button
     .storage
        background: linear-gradient(0deg, rgba(39, 38, 44, 0.4), rgba(39, 38, 44, 0.4)), linear-gradient(rgb(128, 81, 214) 0%, #492286 100%)
     .money
+        display: none
+
+@media screen and (max-width: 575px)
+    .link-container
         display: none
