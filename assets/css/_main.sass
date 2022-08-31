@@ -1,0 +1,200 @@
+@mixin crayola
+    font-size: calc($xl - 30%)
+    background: $yellow-crayola
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    -moz-background-clip: text
+    -moz-text-fill-color: transparent
+    font-weight: $weight600
+    
+.wrapper
+    width: 100%
+    @include flex
+    .container
+        max-width: 90%
+        
+.main-wrapper1
+    padding: calc($rem*7) 0 0
+    background: $bg-color1
+    flex-direction: column
+    @media screen and (max-width: $mobile)
+        padding: 3rem 0 0
+    .container:first-of-type
+        max-height: 192px
+        border-radius: calc($rem*2)
+        background: $main-card-color
+        margin-bottom: $rem
+        @media screen and (max-width: 800px)
+            overflow: hidden
+            margin-bottom: 2rem
+    .swiper
+        overflow: visible
+        .swiper-slide-duplicate-next, .swiper-slide-duplicate-prev
+            overflow: hidden
+        .swiper-slide img
+            position: absolute
+            bottom: 0
+            right: 0
+            z-index: -1
+            @media screen and (max-width: $mobile)
+                width: 460px
+        .slide_lottery
+            padding: 1.3rem 1.5rem 1.4rem
+            @include flex
+            gap: 0.5rem
+            flex-direction: column
+            align-items: flex-start
+            h2
+                font-size: $lg
+                color: white
+                text-shadow: 0px 3px 2px rgba(0, 0, 0, 0.65)
+                line-height: $p-height
+            .countdown
+                height: 55px
+                display: inline-flex
+                align-items: baseline
+                background: url(https://pancakeswap.finance/images/decorations/countdownBg.png) 0% 0% / 100% 100% no-repeat
+                background-repeat: no-repeat
+                padding: 0px 0px 3px 10px
+                p
+                    @include crayola    
+                p:nth-of-type(even)
+                    margin-right: 10px
+                .extra
+                    font-size: $md
+            .btn
+                color: rgb(25, 19, 38)
+        .slide_perpetual
+            gap: 0.5rem
+            @extend .slide_lottery
+            padding: 1.5rem 1.5rem 1.4rem
+            h2 
+                @include crayola
+                font-size: $lg
+                text-shadow: none
+                + h2
+                    font-size: $xl
+                    -webkit-text-fill-color: unset
+                    padding-bottom: 0.5rem
+                    @media screen and (max-width: $mobile)
+                        font-size: 2rem
+            img
+                width: 390px
+                @media screen and (max-width: $mobile)
+                    right: -96px
+                    bottom: -9px
+        .swiper-pagination
+            width: initial
+            .swiper-pagination-bullet
+                background-color: white
+                flex-basis: 108px
+                border-radius: 0px
+                margin: 0px !important
+            &:first-child
+                border-radius: 4px 0px 0px 4px
+            &:last-child
+                border-radius: 0px 4px 4px 0px
+    .container:last-of-type
+        @include flex
+        @media screen and (max-width: $mobile)
+            flex-direction: column-reverse
+        .left
+            @include flex
+            flex-direction: column
+            align-items: flex-start
+            flex: 50%
+            gap: 1.3rem
+            @media screen and (max-width: $mobile)
+                text-align: center
+                align-items: center
+                gap: 2rem
+            h2
+                font-size: $xxl
+                color: $primary-color
+                font-weight: $weight600
+                line-height: $p-height
+                + h2
+                    font-size: $md
+                    color: white
+            div
+                @include flex
+                justify-content: flex-start
+                button
+                    color: white
+                    font-weight: $weight600
+                a
+                    button
+                        color: $secondary-color
+                        border: 2px solid $secondary-color
+                        padding: 0 1rem
+                        border-radius: 1rem
+        .right
+            flex: 50%
+            @media screen and (max-width: $mobile)
+                max-width: 250px
+            .box
+                @include floating(floating, 6px, 15px, 3s, 1s)
+                .box2
+                    @include floating(floating2, 6px, 12px, 3s, 1.5s)
+    .main_svg
+        margin-top: -330px
+        @media screen and (max-width: 800px)
+            margin-top: 0
+
+.main_wrapper2
+    margin-top: -1px // fix border between sections
+    background: linear-gradient(rgb(9, 7, 12) 22%, rgb(32, 19, 53) 100%)
+    flex-direction: column
+    .container:first-of-type
+        padding: 4rem 0 2rem
+        @include flex
+        flex-direction: column
+        h2
+            font-size: $xl
+            color: white
+            font-weight: $weight600
+            line-height: calc($rem*2)
+        p
+            padding-top: $rem
+            color: rgb(184, 173, 210)
+            @media screen and (max-width: $mobile)
+                text-align: center
+    .container:last-of-type
+        padding: 0 0 4rem
+        @include flex
+        flex-wrap: wrap
+        .boxes
+            position: relative
+            padding: 7rem 4rem 2rem 2rem
+            @include component
+            background: rgb(39, 38, 44)
+            svg
+                position: absolute
+                top: 1.5rem
+                right: 1.5rem
+            h2
+                line-height: 1.2
+                color: white
+                font-size: $xl
+                font-weight: $weight600
+            p
+                color: rgb(184, 173, 210)
+                font-size: $rem
+                line-height: $h-height
+                font-weight: $weight400
+        .boxes
+            h2:last-of-type
+                padding-bottom: $rem
+        .boxes:first-of-type
+            svg, h2:last-of-type
+                fill: $primary-color
+                color: $primary-color
+        .boxes:nth-of-type(2)
+            svg, h2:last-of-type 
+                fill: $secondary-color
+                color: $secondary-color
+        .boxes:nth-of-type(3)
+            svg, h2:last-of-type 
+                fill: $tertiary-color
+                color: $tertiary-color
+            
