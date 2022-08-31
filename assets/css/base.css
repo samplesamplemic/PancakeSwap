@@ -101,6 +101,23 @@ nav {
   border-bottom: 1px solid #383241;
 }
 
+.mobile-navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  padding-top: 5px;
+  padding-right: 8px;
+  padding-left: 8px;
+  background: rgb(39, 38, 44);
+  border-top: 1px solid rgb(56, 50, 65);
+  z-index: 20;
+  gap: 0;
+}
+
 body, a, button {
   font-family: "Kanit", sans-serif;
 }
