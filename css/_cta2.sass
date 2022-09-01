@@ -6,7 +6,18 @@
 @import "./modules/_reset.sass"
 @import "./modules/_components.sass"
 @import "./modules/_flex.sass"
-@import "./modules/_asset.sass"
+
+.section-prizes, .section-cake
+  width: 100%
+  height: auto
+  display: flex
+  justify-content: center
+  align-items: center
+
+.section-cont
+  max-width: 968px
+  width: 100%
+  padding: 100px 24px
 
 @mixin flex ($flex-direction, $flex-jc, $flex-ai, $flex-gap)
   display: flex
@@ -111,7 +122,6 @@
 
       @media screen and (min-width: 850px)
         @include flex(row, center, center, 20px)
-
 
       .cardsContainer
         width: auto
@@ -335,8 +345,6 @@
   @media screen and (max-width: 688px)
     padding-top: 50px
 
-
-
 //CARDS
 
 .cardsContainer
@@ -375,7 +383,6 @@
           font-family: $font
           font-size: 16px
           font-weight: $weight600
-
 
         .lTitle2
           height: 24px
