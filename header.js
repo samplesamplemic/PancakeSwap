@@ -38,8 +38,7 @@ function animation(value) {
   });
   occhi.addEventListener("mouseout", (e) => {
     value.style = null;
-    value.style = null;
-  });
+    });
 }
 animation(eye);
 animation(eye2)

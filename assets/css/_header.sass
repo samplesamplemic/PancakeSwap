@@ -13,6 +13,7 @@ nav
 
 .mobile-navbar
     @include flex
+    display: none
     justify-content: space-around
     position: fixed
     bottom: 0px
@@ -257,6 +258,27 @@ body, a, button
     width: calc( $rem * 17.5 )
     padding: 4px 0  
     transform: translate(-15px, 2px)
+
+.content-trade-mobile
+    display: none
+    position: absolute
+    top: 100%
+    background-color: $bg-nav-components
+    border: 1px solid $border-nav-components
+    border-radius: $rem
+    width: calc( $rem * 17.5 )
+    padding: 4px 0  
+    transform: translate(-15px, -300px)
+
+.mobile-btn
+    &:hover
+        background: $secondary-btn-color
+        border-radius: $rem
+    &:hover .content-trade-mobile 
+        display: block
+        div a
+            align-items: flex-start
+        
 
 .riga-divisoria
     margin: 4px 0
@@ -511,3 +533,5 @@ body, a, button
 @media screen and (max-width: 575px)
     .link-container
         display: none
+    .mobile-navbar
+        display: flex
