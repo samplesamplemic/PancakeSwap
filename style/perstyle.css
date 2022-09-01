@@ -133,4 +133,23 @@ div#bg {
   color: rgb(244, 238, 255);
 }
 
+.media-num {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .col-media-del {
+    display: none;
+  }
+
+  .media-num {
+    display: inline;
+    margin-right: 1rem;
+  }
+
+  .table-cell {
+    white-space: normal !important;
+  }
+}
+
 /*# sourceMappingURL=perstyle.css.map */
