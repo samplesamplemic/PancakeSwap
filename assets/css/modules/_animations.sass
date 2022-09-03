@@ -1,0 +1,30 @@
+@mixin floating($keyframeName, $x, $y, $animation-duration:1.5s,  $delay:1s )
+    @keyframes #{$keyframeName}
+        0%
+            transform: translate(0, 0)
+        50%
+            transform: translate($x, $y)
+        100%
+            transform: translate(0, 0)
+
+    animation-name: $keyframeName
+    animation-duration: $animation-duration
+    animation-delay: $delay
+    animation-iteration-count: infinite
+    transition-timing-function: ease-in-out
+    animation-direction: normal
+    animation-fill-mode: none
+    animation-play-state: running
+
+@mixin floating4($x, $y, $speed, $delay)
+    
+
+    @keyframes floating4 
+        0% 
+            transform: translate(0px, 0px)
+        50% 
+            transform: translate($x, $y)
+        100% 
+            transform: translate(0px, 0px)
+            
+    animation: floating4 $speed ease-in-out $delay infinite normal none running  

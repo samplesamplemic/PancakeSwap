@@ -1,0 +1,621 @@
+body
+    height: 100%
+
+@media screen and (min-width: 968px)
+    .content-container
+        padding-top: 48px
+        padding-bottom: 48px
+
+@media screen and (max-width: 852px)
+    .content-container_layer
+        flex-direction: row
+        -webkit-box-align: center
+        align-items: center
+        flex-direction: column-reverse
+        align-items: flex-end
+
+    .top-container_text
+        align-self: center
+        margin-right: 64px
+        margin-left: 2rem
+
+@media screen and (min-width: 576px)
+    .content-container
+        padding-top: 32px
+        padding-bottom: 32px
+
+@media screen and (min-width: 370px)
+    .content-container
+        padding-top: 24px
+        padding-bottom: 24px
+
+.cta-main_container
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: stretch
+
+.cta-top
+    flex: 80%
+    display: flex
+    flex-direction: column
+    width: 100%
+    height: 100%
+
+.cta-top_container
+    flex: 100%
+    display: flex
+    position: relative
+    flex-direction: column
+    -webkit-box-align: center
+    align-items: center
+    z-index: 1
+    background: rgb(8, 6, 11)
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 100%
+
+.svg-top_container
+    flex: 20%
+    justify-content: flex-start
+    z-index: -1
+    overflow: hidden
+    position: absolute
+    width: 100%
+    height: 100%
+    right: 0px
+    top: 0px
+
+.svg-top_bg
+    fill: rgb(32, 19, 53)
+    width: 100%
+    height: 100%
+    max-height: 48px
+
+.content-container
+    margin: 0px
+    width: 100%
+    max-width: 968px
+    min-height: auto
+    padding-top: 16px
+    padding-bottom: 16px
+
+.content-container_layer
+    display: flex
+    -webkit-box-pack: center
+    justify-content: center
+
+.top-container_text
+    display: flex
+    flex-direction: column
+    flex: 1 1 0%
+    align-self: center
+
+.h2-content_text
+    font-size: $xl
+    font-weight: $weight600
+    line-height: $p-height
+    color: $subtitle-color
+
+.span-content_text
+    font-size: 100%
+    color: $primary-color
+
+.p-content_text
+    color: $p-color
+    font-weight: $weight400
+    line-height: $h-height
+    margin-bottom: 24px
+    font-size: $p
+
+.content-container_btn
+    @include flex
+    justify-content: start
+
+.btn-link
+    color: inherit
+    text-decoration: none
+
+.btn-text
+    color: $white
+    font-weight: $weight600
+    line-height: $h-height
+    font-size: $p
+
+.btn-container_a
+    color: $secondary-color
+    font-weight: $weight600
+    line-height: $h-height
+    font-size: $p
+    &:hover
+        text-decoration: underline
+
+.content-container_img
+    display: flex
+    justify-content: space-between
+    align-items: center
+    position: relative
+    width: 50%
+    height: 50%
+    padding: 6rem 0 6rem
+
+// .btc, .bnb, .cake
+//     position: absolute
+//     @include floating(floating, 6px, 5px, 3s, .33s )
+
+.btc 
+  position: absolute
+  animation-name: floating
+  animation-duration: 3s
+  animation-delay: 0.33s
+  animation-iteration-count: infinite
+  transition-timing-function: ease-in-out
+  animation-direction: normal
+  animation-fill-mode: none
+  animation-play-state: running
+
+@keyframes floating 
+  0% 
+    transform: translate(0, 0)
+  
+  50% 
+    transform: translate(6px, 5px)
+  
+  100% 
+    transform: translate(0, 0)
+  
+.bnb 
+  position: absolute
+  animation-name: floating2
+  animation-duration: 3s
+  animation-delay: 1s
+  animation-iteration-count: infinite
+  transition-timing-function: ease-in-out
+  animation-direction: normal
+  animation-fill-mode: none
+  animation-play-state: running
+
+@keyframes floating2 
+  0% 
+    transform: translate(0, 0)
+  
+  50% 
+    transform: translate(3px, 15px)
+  
+  100% 
+    transform: translate(0, 0)
+
+.cake
+  animation-name: floating3
+  animation-duration: 3s
+  animation-delay: 0.66s
+  animation-iteration-count: infinite
+  transition-timing-function: ease-in-out
+  animation-direction: normal
+  animation-fill-mode: none
+  animation-play-state: running
+
+@keyframes floating3 
+  0% 
+    transform: translate(0, 0)
+  
+  50% 
+    transform: translate(5px, 10px)
+  
+  100% 
+    transform: translate(0, 0)
+
+// SECOND CTA PAGE 
+// SECOND CTA PAGE 
+// SECOND CTA PAGE 
+// SECOND CTA PAGE 
+// SECOND CTA PAGE 
+
+.cta-bot
+    flex: 20%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: stretch
+    width: 100%
+    height: 100%
+
+.cta-bot_container
+    flex: 100%
+    display: flex
+    position: relative
+    flex-direction: column
+    -webkit-box-align: center
+    align-items: center
+    z-index: 1
+    background: linear-gradient(166.77deg, rgb(59, 65, 85) 0%, rgb(58, 48, 69) 100%)
+    justify-content: center
+    align-items: center
+
+.svg-bot_container
+    flex: 20%
+    justify-content: flex-start
+    z-index: -1
+    overflow: hidden
+    position: absolute
+    width: 100%
+    height: 100%
+    right: 0px
+    top: 0px
+
+.svg-bot_bg
+    fill: rgb(8, 6, 11)
+    width: 150%
+    height: 100%
+    max-height: 48px
+
+.content-bot_container
+    position: relative
+    flex-direction: column
+    -webkit-box-align: center
+    align-items: center
+    z-index: 1
+    padding: 48px 0px
+
+.content-items_container
+    display: flex
+    flex-direction: column
+
+.content-items
+    display: flex
+    flex-direction: column-reverse
+    align-items: flex-end
+    -webkit-box-pack: center
+    justify-content: center
+
+.bot-container_text
+    display: flex
+    flex-direction: column
+    flex: 1 1 0%
+    align-self: center
+
+.h2-bot_container
+    font-size: 32px
+    font-weight: 600
+    line-height: 1.1
+    color: rgb(244, 238, 255)
+    margin-bottom: 24px
+
+.bot-container_btn
+    display: flex
+
+.bot-btn
+    position: relative
+    -webkit-box-align: center
+    align-items: center
+    border: 0px
+    border-radius: 16px
+    box-shadow: rgb(14 14 44 / 40%) 0px -1px 0px 0px inset
+    cursor: pointer
+    display: inline-flex
+    font-family: inherit
+    font-size: $p
+    font-weight: $weight600
+    -webkit-box-pack: center
+    justify-content: center
+    letter-spacing: 0.03em
+    line-height: 1
+    opacity: 1
+    outline: 0px
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s
+    height: 48px
+    padding: 0px 24px
+    background-color: rgb(31, 199, 212)
+    color: $white
+    margin-right: 16px
+    &:hover
+        opacity: .65
+    &:active
+        opacity: .85
+        transform: translateY(1px)
+
+.bot-btn_a
+    display: flex
+    -webkit-box-align: center
+    align-items: center
+    width: fit-content
+
+.bot-container_img
+    display: flex
+    height: 192px
+    width: 192px
+    margin-bottom: 24px
+
+.bot-img_main
+    position: relative
+    max-height: 512px
+
+.bot-img_pie
+  position: absolute
+  animation-name: floating4
+  animation-duration: 3s
+  animation-delay: 1s
+  animation-iteration-count: infinite
+  transition-timing-function: ease-in-out
+  animation-direction: normal
+  animation-fill-mode: none
+  animation-play-state: running
+
+@keyframes floating4
+  0% 
+    transform: translate(0, 0)
+  
+  50% 
+    transform: translate(6px, 5px)
+  
+  100% 
+    transform: translate(0, 0)
+  
+
+
+.bot-img_stonks
+  position: absolute
+  animation-name: floating5
+  animation-duration: 3s
+  animation-delay: 0.66s
+  animation-iteration-count: infinite
+  transition-timing-function: ease-in-out
+  animation-direction: normal
+  animation-fill-mode: none
+  animation-play-state: running
+
+@keyframes floating5
+  0% 
+    transform: translate(0, 0)
+  
+  50% 
+    transform: translate(3px, 15px)
+  
+  100% 
+    transform: translate(0, 0)
+  
+
+
+.bot-img_folder
+  position: absolute
+  animation-name: floating6
+  animation-duration: 3s
+  animation-delay: 0.33s
+  animation-iteration-count: infinite
+  transition-timing-function: ease-in-out
+  animation-direction: normal
+  animation-fill-mode: none
+  animation-play-state: running
+
+@keyframes floating6
+  0% 
+    transform: translate(0, 0)
+  
+  50% 
+    transform: translate(5px, 10px)
+  
+  100% 
+    transform: translate(0, 0)
+
+.first-pie_img
+    max-height: 512px
+    visibility: hidden
+    height: auto
+    max-width: 100%
+
+.bot-img_pie, .bot-img_stonks, .bot-img_folder
+    height: 100%
+    position: absolute
+    top: 0px
+    left: -1rem
+    margin-right: 0.5rem
+    .img
+        max-height: 100%
+        width: auto
+
+.pie-img, .stonks-img, .folder-img
+    max-height: 100%
+    width: auto
+    height: auto
+    max-width: 100%    
+
+.content-container_stats
+    display: flex
+    flex-direction: column
+    margin-top: 24px
+
+.content-stats
+    display: flex
+    margin-bottom: 24px 
+    margin-left: 1.5rem
+
+.h2-stats
+    font-size: $md
+    font-weight: $weight600
+    line-height: 1.1
+    color: $white
+
+.stats-btn
+    padding: 0px
+    width: 48px
+    position: relative
+    -webkit-box-align: center
+    align-items: center
+    border: 0px
+    border-radius: 16px
+    cursor: pointer
+    display: inline-flex
+    font-family: inherit
+    font-size: 16px
+    font-weight: 600
+    -webkit-box-pack: center
+    justify-content: center
+    letter-spacing: 0.03em
+    line-height: 1
+    outline: 0px
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s
+    background-color: transparent
+    color: rgb(31, 199, 212)
+    box-shadow: none
+    height: 100%
+    &:hover
+        opacity: 0.65
+
+.stats-btn_arrow
+    align-self: center
+    fill: rgb(184, 173, 210)
+    flex-shrink: 0
+
+.grid-stats_container
+    display: grid
+    height: 240px
+
+@media screen and (min-width: 576px)
+    .stats-table
+        gap: 16px
+        grid-template-columns: repeat(5, auto)
+    .stats-table_secondary
+        gap: 16px
+        grid-template-columns: repeat(5, auto)
+
+@media screen and (max-width: 852px)
+    .bot-container_text
+        margin-left: 1rem
+
+    .h2-content_text
+        font-size: $md
+        font-weight: $weight600
+        line-height: 1.1
+        color: rgb(244, 238, 255)
+        margin-bottom: 24px
+
+@media screen and (min-width: 852px)
+    .content-items 
+        flex-direction: row-reverse
+        -webkit-box-align: center
+        align-items: center
+
+    .bot-container_img
+        flex: 1 1 0%
+        margin-bottom: 0px
+        height: 100%
+        width: 100%
+
+    .h2-bot_container
+        font-size: $xl
+
+    .h2-stats
+        font-size: $md
+
+    .grid-stats_container
+        height: 80px
+
+    .stats-table
+        gap: 32px
+
+    .stats-table_secondary
+        gap: 32px
+
+.stats-table
+    display: grid
+    grid-template-columns: repeat(2, auto)
+
+.stats-container
+    position: absolute
+    display: flex
+    gap: 1.5rem
+
+.heading-stats_container
+    overflow: hidden
+    visibility: visible
+    display: flex
+    top: 0px
+    opacity: 1
+    margin-top: 0px
+    transition: opacity 0s ease 0s, margin-top 0s ease 0s, all 0.4s ease-out 0s
+    flex-direction: column
+    padding-left: 1.5rem
+    border-left: 1px solid rgb(38, 33, 48)
+    &:nth-child(1)
+        border-left: none
+
+.heading-stats
+    color: rgb(154, 106, 255)
+    font-weight: $weight600
+    line-height: 1.5
+    margin-bottom: 8px
+    font-size: 12px
+
+.percentage-stats_container
+    gap: 4px
+    display: flex
+
+.percentage-stats
+    color: rgb(244, 238, 255)
+    font-weight: $weight600
+    line-height: 1.1
+    font-size: 16px
+
+.bottom-text_stats
+    color: rgb(184, 173, 210)
+    font-weight: $weight400
+    line-height: 1.5
+    font-size: 16px
+
+.stats-table_secondary
+    display: grid
+    grid-template-columns: repeat(2, auto)
+
+.secondary-stats
+    overflow: hidden
+    visibility: hidden
+    display: flex
+    top: 0px
+    opacity: 1
+    margin-top: 100px
+    transition: opacity 0s ease 0s, margin-top 0s ease 0s, all 0.4s ease-out 0s
+    flex-direction: column
+    padding-left: 1.5rem
+    border-left: 1px solid rgb(38, 33, 48)
+    &:nth-child(1)
+        border-left: none
+
+.stats-secondary_container
+    position: relative
+    display: flex
+    gap: 1.5rem
+
+.hidden-table
+    visibility: hidden
+    margin-top: 100px
+    overflow: hidden
+
+.hidden-table_secondary
+    visibility: visible
+    margin-top: 0px
+    overflow: hidden
+
+.scoreboard-hidden_container
+    width: 4rem
+    height: 4rem
+    visibility: hidden
+    border: 1px red solid
+
+@media screen and (max-width: 852px)
+    .stats-secondary_container
+        display: grid
+        grid-template-columns: repeat(2, auto)
+
+    .stats-container
+        display: grid
+        grid-template-columns: repeat(2, auto)
+
+    .secondary-stats
+        margin-top: 2rem
+
+    .hidden-table_secondary
+        margin-top: 0rem
+
+    .hidden-table
+        margin-top: 2rem

@@ -1,0 +1,582 @@
+nav
+    background-color: $bg-nav-components
+    width: 100%
+    height: calc($rem*3.5)
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: $rem
+    padding: 0 $rem 0 $rem
+    color: $p-color
+    position: fixed
+    border-bottom: 1px solid $border-nav-components
+    z-index: 8
+
+.mobile-navbar
+    @include flex
+    justify-content: space-around
+    position: fixed
+    bottom: 0px
+    width: 100%
+    padding-top: 5px
+    padding-right: 8px
+    padding-left: 8px
+    background: rgb(39, 38, 44)
+    border-top: 1px solid rgb(56, 50, 65)
+    z-index: 53
+    gap: 0
+    
+
+.mobile-btn
+    border: 0px     
+    background: transparent
+    cursor: pointer 
+    padding: 0px 12px
+    &:hover
+        background: #353547
+        border-radius: 1rem
+        
+    &:hover .content-trade
+        display: block
+        transform: translate(-22px, -236px)
+        width: 90%
+        z-index: 55
+        a
+            font-size: 16px
+            align-items: flex-start
+    &:nth-child(2)
+        .content-trade
+            transform: translate(-26.5%, -148px)
+    &:nth-child(3)
+        .content-trade
+            transform: translate(-49%, -192px)
+    &:nth-child(4)
+        .content-trade
+            transform: translate(-70%, -192px)
+    &:nth-child(5)
+        .content-trade
+            transform: translate(-90%, -342px)
+    
+        
+    a
+        height: 44px
+        @include flex
+        justify-content: center
+        flex-direction: column
+        text-decoration: none
+        gap:0
+        color: $p-color
+        font-size: 10px
+        box-sizing: border-box
+    
+
+@mixin scroll-bar
+    ::-webkit-scrollbar
+       width: 8px 
+    ::-webkit-scrollbar-thumb
+       background: rgb(184, 173, 210)
+       border-radius: 8px
+    ::-webkit-scrollbar-track
+        box-shadow: rgb(55 47 71) 0px 0px 5px inset
+        border-radius: 10px
+
+body, a, button
+    font-family: $font
+    @include scroll-bar 
+
+@mixin language
+    
+        position: relative
+        &:hover > div
+            opacity: 1
+            max-height: 400px
+            overflow-y: auto
+            transition: max-height 0s ease 0s, opacity 0.3s ease-in-out 0s
+            pointer-events: auto
+        div
+            position: absolute
+            display: flex
+            opacity: 0
+            flex-direction: column
+            z-index: 1
+            background-color: $bg-nav-components
+            padding: 16px
+            border-radius: 4px
+            max-height: 0
+            width: max-content
+            transform: translate(-50%, 0px)
+            left: 50%
+            top: 100%
+            transition: max-height 0s ease 0.3s, opacity 0.3s ease-in-out 0s
+            pointer-events: none
+            overflow: hidden
+            a
+                color: rgb(244, 238, 255)
+                font-weight: $weight600
+                line-height: 1.5
+                min-height: 32px
+                padding: 0 8px
+                letter-spacing: 0.03rem
+                 
+                &:hover
+                 text-decoration: none
+                 opacity: 0.65
+
+@mixin icon-hover
+    
+    &:hover
+        transition-property: background-color, opacity
+        transition-duration: 0.2s, 0.2s
+        transition-timing-function: ease, ease
+        transition-delay: 0s, 0s
+
+.warning
+    @include flex
+    width: 100%
+    height: 100%
+    gap: 0
+
+.coniglio-storage
+    width: calc($rem*5.75)
+    z-index: 7
+
+.span1
+    color: #ffb237
+    font-weight: $weight600
+    line-height: $h-height
+    font-size: calc($rem*0.875)
+    text-transform: uppercase
+    margin-right: 4px
+
+.span3
+    color: rgb(255, 255, 255)
+    font-weight: $weight600
+    line-height: $h-height
+    font-size: calc($rem*0.875)
+    margin-right: 4px
+
+.span2-4
+    color: rgb(189, 194, 196)
+    font-weight: $weight400
+    @extend .span3
+
+.phishing
+    width: 60%   
+    height: 80%
+    background: rgba(39, 38, 44, .4)
+    border-radius: $rem
+    padding: calc($rem*0.5)
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+
+.storage
+    width: 100%
+    height: calc($rem*4.375)  
+    background: $main-card-color
+    @include flex
+    gap: 0
+
+.close-storage // bottone chiusura banner
+    background: transparent
+    width: calc($rem*3)
+    cursor: pointer
+    border: none
+    @extend .btn
+    
+.logo 
+    display: flex
+    align-items: center
+    height: 100%
+
+.logo-966
+    @extend .hidden
+    
+.sinistra,.nav-menu
+    @include flex
+    width: 100%
+    height: 100%
+    justify-content: flex-start
+    gap: 0
+    
+.link-container
+    @include flex
+    gap: 0
+    height: 100%
+    margin-left: calc($rem*1.6)
+
+.links // link menù nav parte sx
+    padding: calc($rem*1) 
+    @extend .logo
+    position: relative    
+    &:hover
+        background: $secondary-btn-color
+        border-radius: $rem
+        padding: 0 calc($rem*1)
+        height: calc($rem*3)
+    &:hover .content-trade
+        display: block
+         
+        
+.destra,.svg-nav
+    @extend .sinistra,.nav-menu
+    justify-content: flex-end
+
+.money // div con icona e valuta
+    display: flex
+    margin-right: ($rem*1)
+    font-weight: $weight600
+    cursor: pointer
+    &:hover .coniglio-nav
+        margin-right: ($rem*0.6)
+        transition: transform 0.3s ease 0s
+        transform: scale(1.2)
+    .coniglio-nav // svg coniglio parte dx
+        margin-right: ($rem*0.6)
+        transition: transform 0.3s ease 0s
+        &:hover
+            transform: scale(1.2)
+
+.bottoni-destra
+    @include  flex
+    margin-right: ($rem*0.6)
+
+.bottone // connect Wallet 
+    @extend .btn
+    height: calc($rem * 2)
+    @include icon-hover
+    font-family: $font
+
+.bottone-ingranaggio // icona impostazioni
+    @extend .btn-transparent
+    @extend .bottone
+    margin-right: calc($rem*0.2) 
+    cursor: pointer
+    &:hover
+        opacity: 1
+    &:active
+        opacity: 1
+        transform: translateY(0)     
+
+.bottone-lingue // bottone lingue  
+   @extend  .bottone-ingranaggio
+   @extend  .lista-lingue
+//    @extend .btn-transparent
+     
+.lista-lingue    
+   @include scroll-bar
+   @include language
+   cursor: pointer
+   text-align: center
+   a
+    @extend .opacity-hover 
+
+.center-logo
+    height: 100%
+    display: flex
+    align-items: center
+
+.content-trade
+    display: none
+    position: absolute
+    top: 100%
+    background-color: $bg-nav-components
+    border: 1px solid $border-nav-components
+    border-radius: $rem
+    width: calc( $rem * 17.5 )
+    padding: 4px 0  
+    transform: translate(-15px, 2px)
+    z-index: 55
+
+.riga-divisoria
+    margin: 4px 0
+    border-color: $border-nav-components
+    border-style: solid
+    border-width: 1px 0px 0px
+        
+.spigoli-sopra
+    border-top-left-radius: calc( $rem / 2 )
+    border-top-right-radius: calc( $rem / 2 )
+
+.spigoli-sotto
+    border-bottom-left-radius: calc( $rem / 2 )
+    border-bottom-right-radius: calc( $rem / 2 )
+
+.dropdown-a
+    @include flex
+    padding: 0 $rem
+    height: calc( $rem * 3 )
+    width: 100%
+    color: $p-color
+    text-decoration: none
+    justify-content: space-between
+    &:hover 
+        background-color: $secondary-btn-color
+
+.opacity-hover
+    &:hover
+        opacity: 0.65
+    &:active
+        transform: translateY(1px)  
+
+@keyframes occhi
+
+        0%, 100% 
+            transform: scaleY(1)
+
+        50% 
+            transform: scaleY(0.1)
+
+.popup-bg
+    @include flex
+    position: fixed
+    top: 0
+    height: 100vh
+    width: 100vw 
+    background-color: rgba(244, 238, 255, 0.6)
+    z-index: 53
+   
+
+.hidden
+    display: none
+    
+
+.popup-component
+    @include component
+    @include flex
+    flex-direction: column
+    min-width: calc($rem*20)
+    gap: 0
+    z-index: 1
+
+
+.settings-title
+    @include flex
+    justify-content: space-between
+    width: 100%
+    height: 70px
+    color: $subtitle-color
+    font-size: calc($rem*1.2)
+    font-weight: $weight600
+    padding: calc($rem*0.8) calc($rem*1.5)
+    background: linear-gradient(166.77deg, #3b4155 0%, #3a3045 100%)
+
+.settings-body
+    @include flex
+    flex-direction: column
+    width: 100%
+    padding: calc($rem*1.5)
+
+.settings-global
+    @include flex
+    flex-direction: column
+    align-items: flex-start
+    width: 100%
+    gap: 0
+
+.global-title
+    color: $primary-color
+    font-weight: $weight600
+    font-size: 18px
+    text-transform: uppercase
+    line-height: $h-height
+    margin-bottom: calc($rem*1.5)
+    gap: 0
+
+.switch-mode
+    @include flex
+    width: 100%
+    justify-content: space-between
+    gap: 0
+    align-items: flex-start
+    margin-bottom: $rem
+
+.dark-mode
+    color: $subtitle-color
+    font-weight: $weight400
+    line-height: $h-height
+    font-size: $rem
+    margin-bottom: calc($rem*1.5)
+
+.setting-transaction
+    @include flex
+    flex-direction: column
+    align-items: flex-start 
+    gap: 0
+    width: 100%
+
+.close-settings
+    background-color: transparent
+    @extend .btn 
+
+.transaction-box
+    @include flex
+    gap: 0
+    justify-content: flex-start
+    align-items: flex-start
+    margin-bottom: 12px
+
+.transaction-title
+    color: $subtitle-color
+    margin-right: 2px
+
+.transaction-buttons
+    @include flex
+    gap: 0
+    padding-bottom: calc($rem*1.5)  
+
+.transaction-btn
+    background-color:$secondary-btn-color
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s
+    @extend .btn
+    height: calc($rem*2)
+    color : $secondary-color
+    margin: 4px 4px 0 0
+    &:focus
+        color: $white
+        background-color: $secondary-color
+    
+
+
+.switch-theme-btn // cancellare prima del merge
+    @extend .btn-switch
+    input:checked + span
+        background-color: #666171 !important
+    span
+        justify-content: space-around
+    input:checked + span::before
+        background: url('../../assets-footer/moon-dark-theme.svg')
+        background-repeat: no-repeat 
+        background-color: rgb(39, 38, 44)
+        height: 24px
+        width: 24px
+        background-position: right 1px bottom 3px
+    span::before
+        background: url('../../assets-footer/sun-light-theme.svg')
+        background-position: left 50% bottom 50% 
+        background-repeat: no-repeat 
+        background-color: rgb(255, 255, 255)
+        height: 24px
+        width: 24px
+        left: 4px
+        box-shadow: rgb(118 69 217) 0px 0px 0px 1px, rgb(118 69 217 / 60%) 0px 0px 0px 4px
+        transition: 0.3s ease-in-out
+    
+
+.switch-button
+    @extend .btn-switch      
+    span    
+        background-color: #372f47
+    span::before
+        background-color: $bg-nav-components
+        transition: 0.3s ease-in-out
+    input[type="checkbox"] 
+        &:hover + span:before
+             box-shadow: rgb(118 69 217) 0px 0px 0px 1px, rgb(118 69 217 / 60%) 0px 0px 0px 4px
+        &:focus + span:before
+             box-shadow: rgb(118 69 217) 0px 0px 0px 1px, rgb(118 69 217 / 60%) 0px 0px 0px 4px
+        &:checked + span:before
+             box-shadow: rgb(118 69 217) 0px 0px 0px 1px, rgb(118 69 217 / 60%) 0px 0px 0px 4px
+
+.animation-popup-bg
+    animation-name: animation-popup
+    animation-duration: 0.3s
+    animation-timing-function: ease-in-out
+    animation-delay: 0s
+    animation-iteration-count: 1
+    animation-direction: normal
+    animation-fill-mode: forwards
+    animation-play-state: running
+    pointer-events: all
+
+@keyframes animation-popup
+    
+    0%
+        opacity: 0
+
+    100%
+        opacity: 1  
+
+
+.animation-popup-bg-close
+    animation-name: animation-popup-close
+    animation-duration: 0.3s
+    animation-timing-function: ease-in-out
+    animation-delay: 0s
+    animation-iteration-count: 1
+    animation-direction: normal
+    animation-fill-mode: forwards
+    animation-play-state: running
+    pointer-events: none
+
+@keyframes animation-popup-close
+    
+    0%
+        opacity: 1
+
+    100%
+        opacity: 0
+
+.overlay-bg
+    width: 100vw
+    height: 100vh
+    position: absolute
+
+.nav-container
+    position: fixed
+    width: 100%
+    z-index: 50
+    animation-name: animation-scroll-nav
+    transition: top 0.2s ease 0s 
+
+.overlay-mobile
+    width: 100vw
+    height: 100vh
+    position: fixed
+    top: -50px
+    left: 0
+    background-color: rgba(244, 238, 255, 0.6)
+    z-index: 53
+    display: none
+
+@media screen and (min-width: 576px)
+    .mobile-navbar
+        display: none
+
+@media screen and (max-width: 966px)
+    .logo-desktop
+        display: none
+    .logo-966
+        display: block
+    
+
+@media screen and (max-width: 851px)
+    .coniglio-storage
+        display: none
+    .phishing
+        background: transparent
+        width: 100%
+    .storage
+       background: linear-gradient(0deg, rgba(39, 38, 44, 0.4), rgba(39, 38, 44, 0.4)), linear-gradient(rgb(128, 81, 214) 0%, #492286 100%)
+    .money
+        display: none
+
+@media screen and (max-width: 575px)
+    .link-container
+        display: none
+    .mobile-navbar
+        display: flex
+    .mobile-btn 
+        &:hover .overlay-mobile
+            display: block
+    .popup-component
+        width: 100%
+        bottom: 0
+        position: fixed
+        border-bottom-left-radius: 0
+        border-bottom-right-radius: 0
+        border: 1px solid rgb(56, 50, 65)
+    .settings-title
+        border-bottom: 1px solid rgb(56, 50, 65)
+        background: none
+            

@@ -1,0 +1,445 @@
+@mixin scroll-bro
+    ::-webkit-scrollbar
+       width: 8px 
+    ::-webkit-scrollbar-thumb
+       background: rgb(184, 173, 210)
+       border-radius: 8px
+    ::-webkit-scrollbar-track
+        box-shadow: rgb(55 47 71) 0px 0px 5px inset
+        border-radius: 10px
+    
+body, a, button
+    font-family: $font
+    @include scroll-bro
+
+
+@mixin language
+    
+        position: relative
+        &:hover > div
+            opacity: 1
+            max-height: 400px
+            overflow-y: auto
+            transition: max-height 0s ease 0s, opacity 0.3s ease-in-out 0s
+            pointer-events: auto
+            //display: flex
+        div
+            position: absolute
+            display: flex
+            opacity: 0
+            flex-direction: column
+            z-index: 1
+            background-color: $bg-nav-components
+            padding: 16px
+            border-radius: 4px
+            max-height: 0px
+            width: max-content
+            transform: translate(-50%, 0px)
+            left: 50%
+            bottom: 100%
+            //transition: max-height 0s ease 0.3s, opacity 0.3s ease-in-out 0s
+            will-change: opacity
+            pointer-events: none
+            overflow: hidden
+            a
+                color: rgb(184, 173, 210)
+                font-weight: $weight600
+                line-height: 1.5
+                &:hover
+                    text-decoration: underline
+
+
+.up-footer-wrapper
+    background: linear-gradient(rgb(118, 69, 217) 0%, rgb(81, 33, 177) 100%)
+    position: relative
+    height: 26.75rem
+    width: 100%
+    img
+        width: 16rem
+
+.up-footer-container
+    display: flex
+    height: 100%
+    position: absolute
+    justify-content: center
+    margin: auto
+
+.ehi
+    max-width: 1200px
+    left: 0
+    right: 0
+
+.potato-left
+    position: absolute
+    top: 0
+    left: 0
+       
+.potato-left.three
+    top: 8.3rem
+    left: 4rem
+
+.potato-right
+    position: absolute
+    bottom: 0
+    right: 2.5rem
+.potato-right.three
+    right: 1rem
+    bottom: 3rem
+.potato-right.one
+    right: 4rem
+    bottom: .5rem
+
+.up-footer-center
+    max-width: 968px
+    display: flex
+    flex-direction: column
+    gap: 0.2rem
+    justify-content: center
+    align-items: center
+    text-align: center
+    color: $white
+    z-index: 1
+    h1
+        font-size: 40px
+        font-weight: $weight600
+        margin-bottom: 24px
+    a
+        color: $secondary-color
+        font-weight: $weight600
+        &:hover
+            text-decoration: underline
+    button
+        @extend .btn
+        color: $white
+        letter-spacing: 0.03rem
+        margin-top: 24px
+        box-shadow: rgb(14 14 44 / 40%) 0px -1px 0px 0px inset
+        transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s
+    .up-footer-description
+        margin-bottom: 24px
+        font-weight: $weight600
+
+
+.svg-upf-wrap
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0px
+    left: 0px
+    overflow: hidden
+    z-index: -1
+    .svg-upf-cont
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 100%
+        height: 100%
+        svg.svg-up-footer
+            position: absolute
+            width: 150%
+            height: 100%
+            z-index: -1
+
+.two
+    @include floating(floating, 6px, 5px, 3s, .33s )
+.one
+    @include floating(floatin2, 3px, 15px, 3s, 1s)
+.three
+    @include floating(floating3, 5px, 10px, 3s, .66s  )
+
+
+.footer-wrapper
+    background-color: $bg-nav-components
+    padding: 56px 40px 32px
+    margin-bottom: 0px
+    a
+        color: $white
+    ul > :first-child
+        font-weight: $weight600
+        color: $primary-color
+    li
+        margin-bottom: 8px
+
+.footer-row
+    @include flex
+
+    &.footer-list
+        margin-bottom: 36px
+        justify-content: space-between
+        align-items: unset
+        width: 100%
+        list-style: none
+        a:hover 
+            text-decoration: underline
+    &.end-f
+        justify-content: space-between
+
+.container-footer
+    width: 1200px
+    .end-footer
+        display: flex
+        flex-direction: column
+
+.btn-f
+    @extend .btn
+    color: $white
+    letter-spacing: 0.03rem
+    height: 32px
+    padding: 0 16px
+    box-shadow: rgb(14 14 44 / 40%) 0px -1px 0px 0px inset
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s
+
+.icons
+    display: flex
+    padding-bottom: 32px
+    margin-bottom: 32px
+    border-bottom: 1px solid rgb(56, 50, 65)
+    a
+        margin-right: 24px
+        svg
+            fill: rgb(184, 173, 210)
+    .announce-f-container
+        @include language
+
+.icon-money
+    display: flex
+    gap: .5rem
+    cursor: pointer
+    &:hover svg
+        transform: scale(1.2)
+    svg
+        transition: transform 0.3s ease 0s
+        &:hover 
+            transform: scale(1.2)
+    a
+        display: flex
+    span
+        color: rgb(184, 173, 210)
+        font-weight: $weight600
+    
+.lang-f
+    @include language
+    display: flex
+    align-items: center
+    gap: .5rem
+    color: rgb(184, 173, 210)
+    background-color: transparent
+    cursor: pointer
+    //transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s
+    .lang
+        padding: 16px
+        align-items: center
+        a
+           color: $white
+           min-height: 32px
+           padding: 0 8px
+           letter-spacing: 0.03rem
+    
+    svg:hover + span:hover
+        opacity: 0.65
+        cursor: pointer
+
+.footer-switch
+    @extend .btn-switch
+    input:checked + span
+        background-color: #666171 !important
+    span
+        justify-content: space-around
+    input:checked + span::before
+        background: url('../../assets-footer/moon-dark-theme.svg')
+        background-repeat: no-repeat 
+        background-color: rgb(39, 38, 44)
+        height: 24px
+        width: 24px
+        background-position: right 1px bottom 3px
+    span::before
+        background: url('../../assets-footer/sun-light-theme.svg')
+        background-position: left 2.2px bottom 3px
+        background-repeat: no-repeat 
+        background-color: rgb(255, 255, 255)
+        height: 24px
+        width: 24px
+        left: 4px
+        box-shadow: rgb(118 69 217) 0px 0px 0px 1px, rgb(118 69 217 / 60%) 0px 0px 0px 4px
+        transition: 0.3s ease-in-out
+
+@keyframes connect-wallet
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+
+@keyframes close-wallet
+    0%
+        opacity: 1
+    100%
+        opacity: 0
+      
+.connect-wallet
+    display: none
+    z-index: 10
+    justify-content: center
+    width: 100%
+    height: 100%
+    position: fixed
+    inset: 0px
+    align-items: center
+    will-change: opacity
+    transition: z-index 0.35s ease
+    //animation:-
+    .wallet-bg
+        background-color: rgba(244, 238, 255, 0.6)
+        z-index: 9
+        position: fixed
+        width: 100%
+        height: 100%
+        will-change: opacity
+    .wallet
+        min-width: 320px
+        width: 340px
+        display: flex
+        flex-direction: column
+        z-index: 10
+        overflow: hidden
+        background: $bg-nav-components
+        box-shadow: rgb(14 14 44 / 10%) 0px 20px 36px -8px, rgb(0 0 0 / 5%) 0px 1px 1px
+        border: 1px solid rgb(56, 50, 65)
+        border-radius: 32px 32px 32px 32px
+        .wallet-title 
+            background: linear-gradient(139.73deg, rgb(49, 61, 92) 0%, rgb(61, 42, 84) 100%)
+            display: flex
+            align-items: center
+            justify-content: space-between
+            padding: 12px 24px
+            color: rgb(244, 238, 255)
+            font-weight: $weight600
+            font-size: 20px
+            height: 73px
+            .wallet-close
+                display: flex
+                cursor: pointer
+        .wallet-icons
+            width: 100%
+            display: flex
+            flex-direction: column
+            padding-block: 24px
+            border-bottom: 1px solid rgb(56, 50, 65)
+            .wallet-icons-top, .wallet-icons-bot
+                display: flex
+                letter-spacing: 0.03rem
+                .wallet-btn
+                    flex-basis: 50%
+                    padding: 16px 24px
+                    background: transparent
+                    border: none
+                    color: $white
+                    cursor: pointer
+                    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s
+                .wallet-btn:hover
+                    opacity: 0.65
+        .wallet-footer
+            padding: 24px
+            display: flex
+            flex-direction: column
+            align-items: center
+            color: $p-color
+            p
+                margin-bottom: 1rem
+            a
+                width: 100%
+                border-radius: 16px
+                background-color: $p-color
+                color: $bg-nav-components
+                font-weight: $weight600
+                letter-spacing: 0.03rem
+                padding: 0px 24px
+                height: 48px
+                @include flex
+                box-shadow: rgb(14 14 44 / 40%) 0px -1px 0px 0px inset
+                transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s
+            a:hover 
+                opacity: 0.65
+                
+
+//media max width 850px disappear animation up-footer
+//media max width 576px change footer
+.logo-footer.mobile
+    display: none
+
+@keyframes bla
+    0%
+        transform: translateY(100%)
+    100%
+        transform: translateY(0%)
+
+@keyframes bla2
+    0%
+        transform: translateY(0%)
+    100%
+        transform: translateY(100%)
+
+    
+@media screen and (max-width: 850px)
+    .img-left-footer
+        display: none
+    .img-right-footer
+        display: none
+    
+    .connect-wallet 
+        align-items: end 
+        .wallet
+            width: 100%
+            border-radius: 32px 32px 0px 0px
+            // height: 0
+            //transition: height 1s linear
+            .wallet-title
+                background: $bg-nav-components
+                border-bottom: 1px solid rgb(56, 50, 65)
+
+    
+@media screen and (max-width: 576px)
+    .logo-footer.mobile
+        display: block
+        order: 1
+        margin-bottom: 24px
+    .logo-footer
+        display: none
+
+    .container-footer
+        display: flex
+        flex-direction: column
+        .end-f
+            order: 1 !important
+            margin-bottom: 24px
+            padding: 24px 0
+            border-bottom: 1px solid rgb(56, 50, 65)
+            border-top: 1px solid rgb(56, 50, 65)
+            flex-direction: column-reverse
+            align-items: self-start
+            gap: 0.5rem
+            .mobile-f2
+                margin-bottom: 24px
+                width: 100%
+                justify-content: space-between
+        .footer-row
+             order: 2
+             .footer-list
+                flex-direction: column
+                margin-bottom: 42px
+                gap: 0
+                div
+                    margin-bottom: 40px
+        .icons
+            order: 3
+
+    .footer-wrapper
+        padding: 40px 16px
+        margin-bottom: 44px
+    
+    .up-footer-center
+        padding-block: 16px
+        padding-inline: 24px
+
+
+
+

@@ -1,0 +1,391 @@
+.section-prizes, .section-cake
+  width: 100%
+  height: auto
+  display: flex
+  justify-content: center
+  align-items: center
+
+.section-cont
+  max-width: 968px
+  width: 100%
+  padding: 100px 24px
+
+@mixin flex_flavia ($flex-direction, $flex-jc, $flex-ai, $flex-gap)
+  display: flex
+  flex-direction: $flex-direction
+  justify-content: $flex-jc
+  align-items: $flex-ai
+  gap: $flex-gap
+
+.section-prizes
+  width: 100%
+  min-height: 200px
+  background: $bg-color3
+  @include flex_flavia(row, center, center, 0)
+  position: relative
+  overflow: hidden
+
+  .prizes-img-positioner
+    position: absolute
+    width: 512px
+    height: 521px
+
+    @media screen and (max-width: 850px)
+      width: 192px
+      height: 192px
+
+    &:nth-child(1)
+      left: 0
+      bottom: -64px
+
+    &:nth-child(2)
+      right: -10px
+      top: -64px
+
+    .prizes-img-container
+      width: 100%
+      height: 100%
+      position: relative
+
+      .prizes-img
+        position: absolute
+
+        &:nth-child(1)
+          @include floating4(-10px, -20px, 3s, 1s)
+
+        &:nth-child(2)
+          @include floating4(-10px, -20px, 3s, 0.66s)
+
+        &:nth-child(3)
+          @include floating4(-10px, -20px, 3s, 0.33s)
+
+        &:nth-child(4)
+          @include floating4(-10px, -20px, 3s, 0s)
+
+        &:nth-child(5)
+          @include floating4(-10px, -20px, 3s, 0s)
+
+        img
+          width: 100%
+          height: auto
+
+  .center-prizes
+    position: relative
+    backdrop-filter: blur(12px)
+    min-width: 100px
+    min-height: 100px
+    padding: 40px
+    margin: 48px 0px
+    background: $bg-bigcard-color none repeat scroll 0% 0%
+    border: 1px solid rgb(56, 50, 65)
+    border-radius: 72px
+    @include flex_flavia(column, center, center, 10px)
+
+    .prizes-description-container
+      @include flex_flavia(column, center, center, 24px)
+
+      .prizes-title-container
+        text-align: center
+
+        .hStyle
+          h2
+            font-family: $font
+            font-weight: $weight600
+            font-size: $rem*2
+            color: $primary-color
+
+            span
+              color: $white
+              font-size: $rem*2
+              font-family: $font
+
+      .prizes-text-container
+        @include flex_flavia(column, center, center, 0)
+
+        .prizes-text
+          span
+            color: rgb(184, 173, 210)
+            font-size: 16px
+            font-family: $font
+
+    .prizes-cards-container
+      margin-top: 30px
+
+      @media screen and (min-width: 850px)
+        @include flex_flavia(row, center, center, 20px)
+
+      .cardsContainer
+        width: auto
+
+        .biggerC
+          .bText
+            h2
+              height: auto
+              margin: 0
+              font-size: 40px
+              color: rgb(40, 13, 95)
+              font-weight: 600
+              font-family: $font
+
+        @media screen and (min-width: 850px)
+          &:first-of-type
+            transform: rotate(-1.43deg)
+
+          &:last-of-type
+            transform: rotate(1.43deg)
+
+        &:last-of-type
+          .biggerC
+            background-color: #3c1786
+
+            .bCard
+              background: rgba(0, 0, 0, 0) linear-gradient(rgb(118, 69, 217) 0%, rgb(81, 33, 177) 100%) repeat scroll 0% 0%
+
+              .bLogo
+                .containerIcons
+                  .icons-lottery
+                    fill: $white
+
+              .bText
+
+                .lTitle,
+                .lTitle2,
+                .paraghBC
+                  color: $white
+
+                h2
+                  background: -webkit-linear-gradient(rgb(255, 216, 0), rgb(253, 171, 50))
+                  -webkit-background-clip: text
+                  background-clip: text
+                  -webkit-text-fill-color: transparent
+
+.buy-cake
+  @include flex_flavia(column, center, center, 0)
+  width: 100%
+  height: auto
+  margin-bottom: 24px
+
+  .buy-cake-container
+    position: relative
+    @include flex_flavia(column, center, center, 0)
+    align-items: center
+    z-index: 1
+    padding: 48px 0px
+    width: 100%
+
+    .small-buy-cake-container
+      width: 100%
+      max-width: 968px
+      margin: 0px
+
+      .buy-cake-text-and-svg
+        @include flex_flavia(column, center, center, 0)
+        width: 100%
+
+        .small-buy-cake-text-and-svg
+          @include flex_flavia(row, center, auto, 0)
+          width: 100%
+
+          @media screen and (max-width: 688px)
+            @include flex_flavia(column-reverse, auto, auto, 0)
+
+          .buy-cake-text
+            display: flex
+            flex-direction: column
+            align-self: center
+            flex: 1 1 0%
+            margin-right: 64px
+            width: 50%
+
+            @media screen and (max-width:688px)
+              width: 100%
+              padding-top: 90px
+              margin: auto
+
+            .buy-cake-h2-text
+              width: 100%
+
+              h2
+                font-size: $rem*2
+                font-family: $font
+                color: $white
+                line-height: $p-height
+                margin-bottom: 24px
+
+              span
+                color: $primary-color
+
+            .buy-cake-p-text
+              font-size: $rem
+              font-family: $font
+              color: $p-color
+              margin-bottom: 24px
+
+            .buy-cake-buttons
+              @include flex_flavia(row, start, center, 16px)
+              width: 40%
+
+              @media screen and (max-width:688px)
+                width: 60%
+
+              p
+                cursor: pointer
+                color: $secondary-color
+                font-family: $font
+                font-weight: $weight600
+                line-height: $h-height
+                font-size: $rem
+
+                a:hover
+                  text-decoration: $secondary-color underline
+
+              .btn-cake
+                color: white
+                width: 148px
+                height: 48px
+
+          .buy-cake-svg
+            width: 50%
+            position: relative
+            flex: 1 1 0%
+            box-sizing: border-box
+
+            @media screen and (max-width: 688px)
+              width: 100%
+              height: 200px
+
+            img
+              position: absolute
+              top: -50px
+              left: 0px
+              width: 90%
+
+              @media screen and (max-width:688px)
+                left: 140px
+                top: -120px
+                width: 220px
+
+              &:nth-child(1)
+                @include floating4(10px, 15px, 3s, 0.66s)
+
+              &:nth-child(2)
+                @include floating4(8px, 20px, 3s, 1s)
+
+              &:nth-child(3)
+                @include floating4(11px, 10px, 3s, 0.33s)
+
+              &:nth-child(4)
+                @include floating4(10px, 15px, 3s, 0s)
+
+      .buy-cake-numbers-stats
+        font-family: $font
+        @include flex_flavia(column, auto, auto, 30px)
+        margin-top: 84px
+
+        @media screen and (max-width:688px)
+          @include flex_flavia(row, auto, auto, 0)
+
+        .buy-cake-numbers-row
+          @include flex_flavia(row, space-between, auto, 0)
+          text-align: flex-start
+
+          @media screen and (max-width:688px)
+            @include flex_flavia(column, auto, auto, 0)
+            width: 100%
+
+          &:nth-child(2)
+            .buy-cake-numbers-square
+              @media screen and (max-width:688px)
+                border-left: $subtitle-color 1px solid
+                padding-left: 16px
+
+          .buy-cake-numbers-square
+            width: 33.3%
+            @include flex_flavia(column, auto, auto, 2px)
+
+            @media screen and (max-width: 688px)
+              width: 100%
+              margin-bottom: 15px
+
+            &:nth-child(2)
+              @media screen and (min-width:689px)
+                border-left: $subtitle-color 1px solid
+                padding-left: 16px
+
+            &:nth-child(3)
+              @media screen and (min-width:689px)
+                border-left: $subtitle-color 1px solid
+                padding-left: 16px
+
+            p
+              color: $p-color
+              font-weight: $weight400
+              font-size: $rem
+
+            h3
+              color: $subtitle-color
+              font-size: $lg
+              font-weight: $weight600
+
+.section-cake
+  width: 100%
+  overflow: hidden
+  @include flex_flavia(row, center, center, 0px)
+  background-color: rgb(8, 6, 11)
+
+  @media screen and (max-width: 688px)
+    padding-top: 50px
+
+//CARDS
+
+.cardsContainer
+  width: auto
+  height: auto
+  margin: 0
+  padding: 0
+  @include flex_flavia(column, space-around, center, 3rem)
+  padding-top: 10px
+
+  .biggerC
+    width: 291px
+    height: 366px
+    padding: 1px
+    background-color: #ffb237
+    border-radius: 24px
+    @include flex_flavia(row, center, auto, 0)
+
+    .bCard
+      width: calc(100% - 2px)
+      height: calc(100% - 5px)
+      background: linear-gradient(rgb(255, 178, 55) 0%, rgb(255, 205, 81) 51.17%, rgb(255, 231, 106) 100%)
+      padding: 24px
+      border-radius: 24px
+      @include flex_flavia(column, space-between, auto, 0)
+
+      .bLogo
+        @include flex_flavia(row, flex-end, auto, 0)
+
+      .bText
+        @include flex_flavia(column, auto, auto, 0)
+
+        .lTitle
+          height: 24px
+          color: rgb(40, 13, 95)
+          font-family: $font
+          font-size: 16px
+          font-weight: $weight600
+
+        .lTitle2
+          height: 24px
+          color: rgb(40, 13, 95)
+          font-family: $font
+          font-size: 16px
+          font-weight: $weight600
+          margin-bottom: 24px
+
+        .paraghBC
+          height: 48px
+          color: rgb(40, 13, 95)
+          font-family: $font
+          font-size: 16px
+          margin-bottom: 40px
