@@ -1,4 +1,4 @@
-# Pancake-Swap---MERGIATO
+# Pancake-Swap
 
 Sviluppo del sito Pancake Swap https://pancakeswap.finance/ .
 
