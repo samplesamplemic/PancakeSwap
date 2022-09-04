@@ -21,7 +21,7 @@ Sviluppo del sito Pancake Swap https://pancakeswap.finance/ .
  
  Come Kanban e quindi gestione dei tickets, abbiamo usato Trello.
  
- Abbiamo iniziato facendo un analisi dettagliata di tutti gli elementi duplici del sito, successivamente raccolti in delle variabili e tramite l'uso di <strong>SASS<strong>... riusati.
+ Abbiamo iniziato facendo un analisi dettagliata di tutti gli elementi duplici del sito, successivamente raccolti in delle variabili e usati in <strong>SASS<strong>.
  
  Abbiamo raccolto tutti questi elementi suddivisi per:
  * Palette di colori
